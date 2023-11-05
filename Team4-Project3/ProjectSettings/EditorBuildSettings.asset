@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TESTlEVEL.unity
     guid: c936c0ffc0a4ed34db5de4e5b4e9749a
   - enabled: 1
-    path: Assets/Scenes/LEVEL SELECT.unity
+    path: Assets/Scenes/LEVELSELECT.unity
     guid: a78f8e37da4f9aa4ab2838718f79fb5d
+  - enabled: 1
+    path: Assets/Scenes/LEVELONE.unity
+    guid: d4a3d6685086a1642bb642fc4d60d4cd
+  - enabled: 1
+    path: Assets/Scenes/LEVELTHREE.unity
+    guid: 4350d366e7f65454780f387408918694
   m_configObjects: {}

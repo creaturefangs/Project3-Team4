@@ -19,6 +19,14 @@ public class BtnController : MonoBehaviour
     {
         SceneManager.LoadScene("LEVELONE");
     }
+    public void OnLevelTwoClick()
+    {
+        SceneManager.LoadScene("LEVELTWO");
+    }
+    public void OnLevelThreeClick()
+    {
+        SceneManager.LoadScene("LEVELTHREE");
+    }
 
     public void OnCreditButtonClick()
     {
@@ -48,5 +56,9 @@ public class BtnController : MonoBehaviour
     public void OnClickSettings()
     {
         SceneManager.LoadScene("SETTINGSSCENE");
+    }
+    public void OnClickLevelSelect()
+    {
+        SceneManager.LoadScene("LEVELSELECT");
     }
 }
