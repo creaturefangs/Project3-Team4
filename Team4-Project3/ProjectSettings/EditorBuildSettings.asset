@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVELTWO.unity
     guid: 7b21d7390c28cc14684f48dd95a87116
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TESTlEVEL.unity
     guid: c936c0ffc0a4ed34db5de4e5b4e9749a
   - enabled: 1
