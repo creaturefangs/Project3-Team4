@@ -635,6 +635,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   raycastDistance: 7
+  tooltipUI: {fileID: 0}
+  tooltipText: {fileID: 0}
 --- !u!114 &4128331957322625306
 MonoBehaviour:
   m_ObjectHideFlags: 0

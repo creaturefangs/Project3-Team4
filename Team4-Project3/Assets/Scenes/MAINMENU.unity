@@ -684,7 +684,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_sharedMaterial: {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -3283,7 +3284,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 730fb6e5e3e878649954d8ae11d5b352, type: 2}
   m_sharedMaterial: {fileID: 8900266116282729691, guid: 730fb6e5e3e878649954d8ae11d5b352,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 8900266116282729691, guid: 730fb6e5e3e878649954d8ae11d5b352, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -3877,7 +3879,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_sharedMaterial: {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -6142,7 +6145,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_sharedMaterial: {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -6565,7 +6569,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_sharedMaterial: {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
