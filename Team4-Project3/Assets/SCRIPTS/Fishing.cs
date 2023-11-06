@@ -27,8 +27,9 @@ public class Fishing : MonoBehaviour
     private Inventory inv;
 
     private float minigameLength = 15f; // In seconds.
-    private float catchTime = 0f;
+    public float catchTime = 0f;
     private bool inMinigame = false;
+    private GameObject minigameUI;
     private RectTransform catchZone;
     private RectTransform catchNeedle;
 
@@ -38,13 +39,18 @@ public class Fishing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (currentFish < maxFish) { SpawnFish(); }
+        // if (currentFish < maxFish) { SpawnFish(); }
+        inv = gameObject.GetComponent<Inventory>();
         if (inv.fishWhisperer) // If the player has the Fish Whisperer shop upgrade...
         {
             rarityCommon = 40; // 40% chance of spawn.
             rarityUncommon = 80; // 40% chance of spawn.
             rarityRare = 100; // 20% chance of spawn.
         }
+
+        minigameUI = GameObject.Find("MinigamePanel").transform.GetChild(0).gameObject;
+        catchZone = minigameUI.transform.GetChild(0).gameObject.GetComponent<RectTransform>();
+        catchNeedle = minigameUI.transform.GetChild(1).gameObject.GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -57,6 +63,7 @@ public class Fishing : MonoBehaviour
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
                 CatchFish();
+                inMinigame = false;
             }
         }
     }
@@ -74,12 +81,10 @@ public class Fishing : MonoBehaviour
 
     public void StartMinigame(GameObject fish_obj) // Call from FishBehavior script on fish.
     {
+        inMinigame = true;
         fish = fish_obj;
-        GameObject ui = GameObject.Find("MinigamePanel");
-        var uiHeight = ui.GetComponent<RectTransform>().sizeDelta.y;
-        GameObject catchZone = ui.transform.GetChild(0).gameObject; // Set to whatever child num. it is in the mini-game UI.
-        var zoneRect = catchZone.GetComponent<RectTransform>();
-        ui.SetActive(true);
+        var uiHeight = minigameUI.GetComponent<RectTransform>().sizeDelta.y;
+        minigameUI.SetActive(true);
 
         float extra = 0;
         if (inv.strongerLine) { extra = 0.1f; } // If the player has the Stronger Line shop upgrade, make the viable catch zone larger.
@@ -87,19 +92,19 @@ public class Fishing : MonoBehaviour
         switch (rarity)
         {
             case "common":
-                zoneRect.sizeDelta = new Vector2(zoneRect.sizeDelta.x, uiHeight * (0.6f + extra));
+                catchZone.sizeDelta = new Vector2(catchZone.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
             case "uncommon":
-                zoneRect.sizeDelta = new Vector2(zoneRect.sizeDelta.x, uiHeight * (0.3f + extra));
+                catchZone.sizeDelta = new Vector2(catchZone.sizeDelta.x, uiHeight * (0.3f + extra));
                 break;
             case "rare":
-                zoneRect.sizeDelta = new Vector2(zoneRect.sizeDelta.x, uiHeight * (0.1f + extra));
+                catchZone.sizeDelta = new Vector2(catchZone.sizeDelta.x, uiHeight * (0.1f + extra));
                 break;
             default:
-                zoneRect.sizeDelta = new Vector2(zoneRect.sizeDelta.x, uiHeight * (0.6f + extra));
+                catchZone.sizeDelta = new Vector2(catchZone.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
         }
-        catchTime = 0f;
+        catchTime = 0f; // Resets the catch progress.
     }
 
     private void CatchFish()
