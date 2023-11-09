@@ -10,7 +10,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject[] pauseMenuButtons;
     [SerializeField] private GameObject playerUI;
     [SerializeField] private GameObject helpMenu;
-    public AudioSource pauseSFX;
+    public AudioSource pauseSound;
+    public AudioClip pauseSFX;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class PauseManager : MonoBehaviour
         playerUI.SetActive(true);
         gameIsPaused = false;
         AudioListener.pause = false;
-        pauseSFX.Play();
+        pauseSound.PlayOneShot(pauseSFX);
 
     }
 
@@ -55,8 +56,8 @@ public class PauseManager : MonoBehaviour
         gameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        pauseSFX.Play();
-        AudioListener.pause = true;
+        pauseSound.PlayOneShot(pauseSFX);
+        AudioListener.pause = false;
     }
 
     public void SetHelpMenuActiveState()
