@@ -20,7 +20,7 @@ public class FishBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NoticeHook();
+        // NoticeHook();
     }
 
     private void NoticeHook()
