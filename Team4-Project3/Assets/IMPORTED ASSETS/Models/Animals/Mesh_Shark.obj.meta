@@ -3,7 +3,12 @@ guid: 6132d9ccf3149b04aac57e5fa376781f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_SharkMat
+    second: {fileID: 2100000, guid: 009deb72f34d75f4f92e629cb11588e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

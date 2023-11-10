@@ -3,7 +3,12 @@ guid: 8501e06089e05554a96d5cedcc84485f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_SalmonMat
+    second: {fileID: 2100000, guid: e481eb2c6cac76f4b8d847f542427210, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
