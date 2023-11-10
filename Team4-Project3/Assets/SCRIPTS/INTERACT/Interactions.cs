@@ -10,8 +10,8 @@ public class Interactions : MonoBehaviour
     public LayerMask interactL;
     public int raycastDistance = 7;
 
-    public GameObject tooltipUI;
-    public TMP_Text tooltipText;
+    private GameObject tooltipUI;
+    private TMP_Text tooltipText;
 
     private bool canInteract = false;
     private string type;
@@ -53,8 +53,7 @@ public class Interactions : MonoBehaviour
     {
         switch (type)
         {
-            case "boat":
-                Debug.Log("Greetings GAMERS and CLOWNS");
+            case "fishing":
                 break;
             case "rod":
                 Debug.Log("rod");
