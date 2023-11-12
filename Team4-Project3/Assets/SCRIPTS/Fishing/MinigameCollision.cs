@@ -8,7 +8,7 @@ public class MinigameCollision : MonoBehaviour
     private Fishing fishing;
     private bool inCatchZone;
 
-    public float force = 200f;
+    public float force = 225f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class MinigameCollision : MonoBehaviour
         if (other.CompareTag("CatchZone"))
         {
             inCatchZone = true;
-            other.gameObject.GetComponent<Image>().color = new Color32(122, 255, 142, 255);
+            other.gameObject.GetComponent<Image>().color = new Color32(59, 255, 89, 255);
         }
     }
 
@@ -49,7 +49,7 @@ public class MinigameCollision : MonoBehaviour
         if (other.CompareTag("CatchZone"))
         {
             inCatchZone = false;
-            other.gameObject.GetComponent<Image>().color = new Color32(59, 255, 89, 255);
+            other.gameObject.GetComponent<Image>().color = new Color32(253, 255, 100, 255);
         }
     }
 }

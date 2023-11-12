@@ -2542,7 +2542,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 40
+  m_GravityScale: 50
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2566,7 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9543a5de6fd6f4ab55d05c55f084b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 200
+  force: 225
 --- !u!1 &2593082962586186363
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23113209, g: 1, b: 0.35046077, a: 1}
+  m_Color: {r: 0.99215686, g: 1, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9601,9 +9601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97da9e962117008458d9df7207335e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commonFish: {fileID: 0}
-  uncommonFish: {fileID: 0}
-  rareFish: {fileID: 0}
+  commonFish: {fileID: 8144836068457703388, guid: e26f5c768d6f34f42b3622ea0add29e9,
+    type: 3}
+  uncommonFish: {fileID: 6595664370541840382, guid: d380cc89edcf9db40b0e3db21dd36aa4,
+    type: 3}
+  rareFish: {fileID: 450723289840737889, guid: 729f3de58a581cb4b83bc36a55f7a0e0, type: 3}
   rarityCommon: 60
   rarityUncommon: 90
   rarityRare: 100

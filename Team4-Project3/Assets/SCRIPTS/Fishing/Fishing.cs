@@ -9,6 +9,7 @@ public class Fishing : MonoBehaviour
 {
     private int maxFish = 10;
     private int currentFish = 0;
+    private LayerMask water;
 
     [Header("Fish Prefabs")]
     public GameObject commonFish;
@@ -34,6 +35,7 @@ public class Fishing : MonoBehaviour
     private GameObject minigameUI;
     private GameObject catchZone;
 
+    private GameObject activeFish;
     private GameObject fish;
     private string rarity;
 
@@ -51,6 +53,9 @@ public class Fishing : MonoBehaviour
 
         minigameUI = transform.GetChild(3).GetChild(0).transform.gameObject;
         catchZone = minigameUI.transform.GetChild(1).gameObject;
+
+        water = LayerMask.NameToLayer("Water");
+        InvokeRepeating("SpawnFish", 5f, 15f);
     }
 
     // Update is called once per frame
@@ -68,13 +73,31 @@ public class Fishing : MonoBehaviour
 
     private void SpawnFish()
     {
+        // Dynamically create a container for the spawned fish if it hasn't already been made via the script.
+        activeFish = GameObject.Find("ActiveFish");
+        if (!activeFish) { activeFish = new GameObject(); activeFish.name = "ActiveFish";  }
+
         int chance = Random.Range(1, 101);
+        float xRange = Random.Range(610, 631);
+        float zRange = Random.Range(460, 476);
+        float yRotation = Random.Range(1, 361);
+        
         GameObject prefab;
         if (chance <= rarityCommon) { prefab = commonFish; }
-        else if (rarityCommon < chance && chance > rarityRare) { prefab = uncommonFish; }
+        else if (rarityCommon < chance && chance <= rarityUncommon) { prefab = uncommonFish; }
         else { prefab = rareFish; }
 
-        Instantiate(prefab);
+        GameObject newFish = Instantiate(prefab, new Vector3(xRange, 44f, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
+        ValidPosition(newFish);
+    }
+
+    private void ValidPosition(GameObject fish_obj)
+    {
+        RaycastHit hit;
+        while (Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
+        {
+            fish_obj.transform.position = new Vector3(Random.Range(610, 631), 44f, Random.Range(460, 476));
+        }
     }
 
     public void StartMinigame(GameObject fish_obj) // Call from FishBehavior script on fish.
@@ -100,7 +123,7 @@ public class Fishing : MonoBehaviour
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.3f + extra));
                 break;
             case "rare":
-                anim.speed = 0.6f;
+                anim.speed = 0.5f;
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.1f + extra));
                 break;
             default:

@@ -6449,12 +6449,12 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769630409}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Fishing, Assembly-CSharp
         m_MethodName: StartMinigame
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2125234720}
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7006,7 +7006,7 @@ GameObject:
   - component: {fileID: 1603191942}
   - component: {fileID: 1603191941}
   - component: {fileID: 1603191940}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7630,18 +7630,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756952926}
   m_Mesh: {fileID: -5510776075777179962, guid: 2290eb408e3071d428597ce36af3adc0, type: 3}
---- !u!114 &1769630409 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8928308428498442367, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 7843291686164216366}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97da9e962117008458d9df7207335e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1773764471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483451816689174669, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7,
@@ -10199,12 +10187,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7, type: 3}
---- !u!1 &2125234720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3205440152762042546, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1986811821566158416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2142929324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11367,74 +11349,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 765c8e488d750a444821148e082b298b, type: 3}
---- !u!1001 &1986811821566158416
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 618.75195
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 48.59105
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 459.8186
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 349591191352069993, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3205440152762042546, guid: 73c096cf64b13fb4cb840bed9ade46c8,
-        type: 3}
-      propertyPath: m_Name
-      value: FishPlaceholder
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73c096cf64b13fb4cb840bed9ade46c8, type: 3}
 --- !u!1001 &4906821900172990649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11724,4 +11638,3 @@ SceneRoots:
   - {fileID: 620283079}
   - {fileID: 854292650}
   - {fileID: 7843291686164216366}
-  - {fileID: 1986811821566158416}
