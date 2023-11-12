@@ -26,7 +26,14 @@ public class Fishing : MonoBehaviour
     public int valueUncommon = 3;
     public int valueRare = 5;
 
+    [Header("Mini-Game Speed")]
+    public float speedCommon = 0.15f;
+    public float speedUncommon = 0.3f;
+    public float speedRare = 0.5f;
+
     private Inventory inv;
+    private FirstPersonMovement movement;
+    private FirstPersonLook look;
 
     [Header("Mini-Game")]
     public float catchTime = 0f;
@@ -44,6 +51,8 @@ public class Fishing : MonoBehaviour
     {
         // if (currentFish < maxFish) { SpawnFish(); }
         inv = gameObject.GetComponent<Inventory>();
+        movement = GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>();
+        look = GameObject.Find("First Person Controller Minimal").transform.GetChild(0).GetComponent<FirstPersonLook>();
         if (inv.fishWhisperer) // If the player has the Fish Whisperer shop upgrade...
         {
             rarityCommon = 40; // 40% chance of spawn.
@@ -61,12 +70,14 @@ public class Fishing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F)) { inMinigame = !inMinigame; }
         if (inMinigame) // While player is in the fishing mini-game.
         {
+            if (movement.canMove) { movement.TogglePlayerFreeze(); look.canMove = false; }
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
                 EndMinigame();
+                movement.TogglePlayerFreeze();
+                look.canMove = true;
             }
         }
     }
@@ -115,19 +126,19 @@ public class Fishing : MonoBehaviour
         switch (rarity)
         {
             case "common":
-                anim.speed = 0.15f;
+                anim.speed = speedCommon;
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
             case "uncommon":
-                anim.speed = 0.3f;
+                anim.speed = speedUncommon;
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.3f + extra));
                 break;
             case "rare":
-                anim.speed = 0.5f;
+                anim.speed = speedRare;
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.1f + extra));
                 break;
             default:
-                anim.speed = 0.15f;
+                anim.speed = speedCommon;
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
         }

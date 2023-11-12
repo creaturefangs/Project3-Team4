@@ -7336,14 +7336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  pauseMenuUI: {fileID: 0}
   pauseMenuButtons:
   - {fileID: 2593082962586186363}
   - {fileID: 5039197098094209019}
   - {fileID: 8927290804107967698}
   - {fileID: 4906113027029389404}
-  playerUI: {fileID: 0}
-  helpMenu: {fileID: 0}
   pauseSound: {fileID: 0}
   pauseSFX: {fileID: 8300000, guid: 70c498db10a5caf4c9174292a7543e51, type: 3}
 --- !u!114 &1314652340991982529
@@ -10072,6 +10069,7 @@ GameObject:
   - component: {fileID: 1690610148913287755}
   - component: {fileID: 6799842632619366068}
   - component: {fileID: 6443223380200647070}
+  - component: {fileID: 3785674396596483781}
   m_Layer: 5
   m_Name: In-Game
   m_TagString: Untagged
@@ -10172,7 +10170,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   raycastDistance: 10
-  tooltipText: {fileID: 0}
 --- !u!114 &6799842632619366068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10214,8 +10211,25 @@ MonoBehaviour:
   valueCommon: 1
   valueUncommon: 3
   valueRare: 5
+  speedCommon: 0.15
+  speedUncommon: 0.3
+  speedRare: 0.5
   catchTime: 0
   inMinigame: 0
+--- !u!114 &3785674396596483781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447569105043962267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747d6e9a50c85a847b82570ff6345519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devTools: 0
+  toggleKey: 256
 --- !u!1 &7518760334710951995
 GameObject:
   m_ObjectHideFlags: 0

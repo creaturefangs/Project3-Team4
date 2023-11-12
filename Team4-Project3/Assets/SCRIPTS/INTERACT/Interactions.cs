@@ -11,7 +11,7 @@ public class Interactions : MonoBehaviour
     public int raycastDistance = 7;
 
     private GameObject tooltipUI;
-    public TMP_Text tooltipText;
+    private TMP_Text tooltipText;
 
     private bool canInteract = false;
     private GameObject target;

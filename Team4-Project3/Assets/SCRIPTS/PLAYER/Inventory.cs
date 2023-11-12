@@ -26,10 +26,10 @@ public class Inventory : MonoBehaviour
                 requirement = 10;
                 break;
             case "LevelTwo":
-                requirement = 10;
+                requirement = 15;
                 break;
             case "LevelThree":
-                requirement = 10;
+                requirement = 20;
                 break;
             default:
                 requirement = 10;
@@ -50,6 +50,13 @@ public class Inventory : MonoBehaviour
         text.text = currency.ToString();
         if (change < 0) { } // If you lose fish...
         else if (change > 0) { } // If you gain fish...
+    }
+
+    public void SetCurrency(int current)
+    {
+        TMP_Text text = GameObject.Find("Currency").GetComponent<TMP_Text>();
+        currency = current;
+        text.text = currency.ToString();
     }
 
     public void BuyItem(int cost, string item)

@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public bool gameIsPaused = false;
-    [SerializeField] private GameObject pauseMenuUI;
+    private GameObject pauseMenuUI;
     [SerializeField] private GameObject[] pauseMenuButtons;
-    [SerializeField] private GameObject playerUI;
-    [SerializeField] private GameObject helpMenu;
+    private GameObject playerUI;
+    private GameObject helpMenu;
     public AudioSource pauseSound;
     public AudioClip pauseSFX;
+
+    private FirstPersonLook look;
 
     void Start()
     {
         pauseMenuUI = transform.GetChild(3).gameObject;
         playerUI = transform.GetChild(0).gameObject;
         helpMenu = pauseMenuUI.transform.GetChild(2).gameObject;
+
+        look = GameObject.Find("First Person Controller Minimal").transform.GetChild(0).GetComponent<FirstPersonLook>();
     }
 
     // Update is called once per frame
@@ -42,17 +46,19 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
+        look.canMove = true;
+
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
         gameIsPaused = false;
         AudioListener.pause = false;
         pauseSound.PlayOneShot(pauseSFX);
-
     }
 
     public void Pause()
     {
         Time.timeScale = 0f;
+        look.canMove = false;
         pauseMenuUI.SetActive(true);
         playerUI.SetActive(false);
         gameIsPaused = true;
