@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e4e17f333d4e5e46b34a319d18531ef
+guid: 01d0dcc37c5e7384485c175e09b8fd33
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: 66ee9b76cd58e0249a9eb6dbbb6b9f88, type: 2}
+      name: Geo_EelMat
+    second: {fileID: 2100000, guid: ff216c700df6a4447b8209784a21671d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
