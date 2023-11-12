@@ -43,9 +43,9 @@ public class FirstPersonMovement : MonoBehaviour
         rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
     }
 
-    public void TogglePlayerFreeze()
+    public void TogglePlayerFreeze(bool move)
     {
-        canMove = !canMove;
+        canMove = move;
         if (canMove) { rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; }
         else { rigidbody.constraints = RigidbodyConstraints.FreezeAll; }
     }

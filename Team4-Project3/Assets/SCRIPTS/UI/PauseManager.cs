@@ -14,6 +14,8 @@ public class PauseManager : MonoBehaviour
     public AudioClip pauseSFX;
 
     private FirstPersonLook look;
+    private FirstPersonMovement movement;
+    private Interactions interact;
 
     void Start()
     {
@@ -21,7 +23,9 @@ public class PauseManager : MonoBehaviour
         playerUI = transform.GetChild(0).gameObject;
         helpMenu = pauseMenuUI.transform.GetChild(2).gameObject;
 
-        look = GameObject.Find("First Person Controller Minimal").transform.GetChild(0).GetComponent<FirstPersonLook>();
+        movement = GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>();
+        look = GameObject.Find("First Person Controller Minimal").GetComponentInChildren<FirstPersonLook>();
+        interact = GetComponentInChildren<Interactions>();
     }
 
     // Update is called once per frame
@@ -42,11 +46,8 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        ExitMenu();
         Time.timeScale = 1f;
-        look.canMove = true;
 
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
@@ -57,15 +58,31 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
+        EnterMenu();
         Time.timeScale = 0f;
-        look.canMove = false;
         pauseMenuUI.SetActive(true);
         playerUI.SetActive(false);
         gameIsPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         pauseSound.PlayOneShot(pauseSFX);
         AudioListener.pause = false;
+    }
+
+    public void EnterMenu() // Enables and disables various things that shouldn't be accessible in menus/UI (like player/camera movement, interactions, the cursor...)
+    {
+        interact.canInteract = false;
+        look.canMove = false;
+        movement.TogglePlayerFreeze(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ExitMenu() // Reverses the above.
+    {
+        interact.canInteract = true;
+        look.canMove = true;
+        movement.TogglePlayerFreeze(true);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void SetHelpMenuActiveState()

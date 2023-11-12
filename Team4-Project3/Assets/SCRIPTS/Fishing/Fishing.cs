@@ -34,8 +34,7 @@ public class Fishing : MonoBehaviour
     public float speedRare = 0.5f;
 
     private Inventory inv;
-    private FirstPersonMovement movement;
-    private FirstPersonLook look;
+    private PauseManager pause;
 
     [Header("Mini-Game")]
     [HideInInspector] public float catchTime = 0f;
@@ -53,15 +52,14 @@ public class Fishing : MonoBehaviour
     void Start()
     {
         inv = gameObject.GetComponent<Inventory>();
-        movement = GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>();
-        look = GameObject.Find("First Person Controller Minimal").transform.GetChild(0).GetComponent<FirstPersonLook>();
+        pause = GetComponentInParent<PauseManager>();
 
         meter = transform.GetChild(3).GetChild(0).transform.gameObject;
         catchZone = meter.transform.GetChild(1).gameObject;
         timer = meter.transform.parent.GetComponentInChildren<TMP_Text>();
 
         water = LayerMask.NameToLayer("Water");
-        InvokeRepeating("SpawnFish", 5f, 15f);
+        InvokeRepeating("SpawnFish", 0f, 15f);
     }
 
     // Update is called once per frame
@@ -70,18 +68,15 @@ public class Fishing : MonoBehaviour
         if (inMinigame) // While player is in the fishing mini-game.
         {
             catchTime = Mathf.Clamp(catchTime, 0f, minigameLength);
-            if (movement.canMove) { movement.TogglePlayerFreeze(); look.canMove = false; } // Freezes player and camera movement.
             timer.text = (minigameLength - catchTime).ToString("F1"); // "F1" shows only to first decimal place.
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
                 EndMinigame();
-                movement.TogglePlayerFreeze();
-                look.canMove = true;
             }
         }
     }
 
-    private void SpawnFish()
+    public void SpawnFish()
     {
         // Dynamically create a container for the spawned fish if it hasn't already been made via the script.
         activeFish = GameObject.Find("ActiveFish");
@@ -126,6 +121,7 @@ public class Fishing : MonoBehaviour
         Animator anim = catchZone.GetComponent<Animator>();
         meter.transform.parent.gameObject.SetActive(true);
 
+        pause.EnterMenu(); // Freezes player and camera movement.
         TMP_Text tooltipText = GameObject.Find("TooltipPanel").GetComponentInChildren<TMP_Text>();
         tooltipText.text = "Hold SPACE to move the needle!";
 
@@ -159,6 +155,7 @@ public class Fishing : MonoBehaviour
         meter.transform.parent.gameObject.SetActive(false);
         CatchFish();
         inMinigame = false;
+        pause.ExitMenu();
     }
 
     private void CatchFish()

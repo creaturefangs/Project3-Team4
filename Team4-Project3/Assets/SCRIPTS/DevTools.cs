@@ -25,6 +25,11 @@ public class DevTools : MonoBehaviour
             ToggleUpgrades();
             // EasyMinigame();
         }
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            Fishing fishing = GetComponent<Fishing>();
+            fishing.SpawnFish();
+        }
     }
 
     private void ToggleUpgrades()
