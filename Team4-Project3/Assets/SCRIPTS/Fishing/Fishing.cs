@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Fishing : MonoBehaviour
 {
@@ -36,11 +38,12 @@ public class Fishing : MonoBehaviour
     private FirstPersonLook look;
 
     [Header("Mini-Game")]
-    public float catchTime = 0f;
+    [HideInInspector] public float catchTime = 0f;
     private float minigameLength = 10f; // In seconds.
-    public bool inMinigame = false;
-    private GameObject minigameUI;
+    [HideInInspector] public bool inMinigame = false;
+    private GameObject meter;
     private GameObject catchZone;
+    private TMP_Text timer;
 
     private GameObject activeFish;
     private GameObject fish;
@@ -49,19 +52,13 @@ public class Fishing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if (currentFish < maxFish) { SpawnFish(); }
         inv = gameObject.GetComponent<Inventory>();
         movement = GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>();
         look = GameObject.Find("First Person Controller Minimal").transform.GetChild(0).GetComponent<FirstPersonLook>();
-        if (inv.fishWhisperer) // If the player has the Fish Whisperer shop upgrade...
-        {
-            rarityCommon = 40; // 40% chance of spawn.
-            rarityUncommon = 80; // 40% chance of spawn.
-            rarityRare = 100; // 20% chance of spawn.
-        }
 
-        minigameUI = transform.GetChild(3).GetChild(0).transform.gameObject;
-        catchZone = minigameUI.transform.GetChild(1).gameObject;
+        meter = transform.GetChild(3).GetChild(0).transform.gameObject;
+        catchZone = meter.transform.GetChild(1).gameObject;
+        timer = meter.transform.parent.GetComponentInChildren<TMP_Text>();
 
         water = LayerMask.NameToLayer("Water");
         InvokeRepeating("SpawnFish", 5f, 15f);
@@ -72,7 +69,9 @@ public class Fishing : MonoBehaviour
     {
         if (inMinigame) // While player is in the fishing mini-game.
         {
-            if (movement.canMove) { movement.TogglePlayerFreeze(); look.canMove = false; }
+            catchTime = Mathf.Clamp(catchTime, 0f, minigameLength);
+            if (movement.canMove) { movement.TogglePlayerFreeze(); look.canMove = false; } // Freezes player and camera movement.
+            timer.text = (minigameLength - catchTime).ToString("F1"); // "F1" shows only to first decimal place.
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
                 EndMinigame();
@@ -87,6 +86,13 @@ public class Fishing : MonoBehaviour
         // Dynamically create a container for the spawned fish if it hasn't already been made via the script.
         activeFish = GameObject.Find("ActiveFish");
         if (!activeFish) { activeFish = new GameObject(); activeFish.name = "ActiveFish";  }
+
+        if (inv.fishWhisperer) // If the player has the Fish Whisperer shop upgrade...
+        {
+            rarityCommon = 40; // 40% chance of spawn.
+            rarityUncommon = 80; // 40% chance of spawn.
+            rarityRare = 100; // 20% chance of spawn.
+        }
 
         int chance = Random.Range(1, 101);
         float xRange = Random.Range(610, 631);
@@ -115,13 +121,16 @@ public class Fishing : MonoBehaviour
     {
         inMinigame = true;
         fish = fish_obj;
-        // var uiHeight = minigameUI.GetComponent<RectTransform>().sizeDelta.y;
+        // var uiHeight = meter.GetComponent<RectTransform>().sizeDelta.y;
         // RectTransform rect = catchZone.GetComponent<RectTransform>();
         Animator anim = catchZone.GetComponent<Animator>();
-        minigameUI.transform.parent.gameObject.SetActive(true);
+        meter.transform.parent.gameObject.SetActive(true);
 
-        // float extra = 0;
-        // if (inv.strongerLine) { extra = 0.1f; } // If the player has the Stronger Line shop upgrade, make the viable catch zone larger.
+        TMP_Text tooltipText = GameObject.Find("TooltipPanel").GetComponentInChildren<TMP_Text>();
+        tooltipText.text = "Hold SPACE to move the needle!";
+
+        if (inv.strongerLine) { minigameLength = 7.5f; } // If the player has the Stronger Line shop upgrade, the time needed to stay in the catch-zone is shorter by 25%.
+
         rarity = fish.GetComponent<FishBehavior>().rarity;
         switch (rarity)
         {
@@ -147,7 +156,7 @@ public class Fishing : MonoBehaviour
 
     private void EndMinigame()
     {
-        minigameUI.transform.parent.gameObject.SetActive(false);
+        meter.transform.parent.gameObject.SetActive(false);
         CatchFish();
         inMinigame = false;
     }

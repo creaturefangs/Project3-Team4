@@ -47,9 +47,12 @@ public class Interactions : MonoBehaviour
             interEvent = target.GetComponent<InteractBehavior>().onInteract;
             type = target.GetComponent<InteractBehavior>().type;
 
-            canInteract = true;
             tooltipUI.SetActive(true);
-            tooltipText.text = "Press E to Interact";
+            if (!fishing.inMinigame)
+            {
+                canInteract = true;
+                tooltipText.text = "Press E to Interact";
+            }
         }
         else { canInteract = false; tooltipUI.SetActive(false); }
     }

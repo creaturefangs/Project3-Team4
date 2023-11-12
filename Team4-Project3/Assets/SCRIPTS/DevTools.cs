@@ -22,7 +22,8 @@ public class DevTools : MonoBehaviour
         {
             devTools = !devTools;
             InfiniteMoney();
-            EasyMinigame();
+            ToggleUpgrades();
+            // EasyMinigame();
         }
     }
 
