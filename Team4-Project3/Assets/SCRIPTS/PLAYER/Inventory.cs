@@ -45,18 +45,20 @@ public class Inventory : MonoBehaviour
 
     public void UpdateCurrency(int change)
     {
+        Animator animator = GameObject.Find("Currency").GetComponent<Animator>();
         TMP_Text text = GameObject.Find("Currency").GetComponent<TMP_Text>();
         currency += change;
         text.text = currency.ToString();
-        if (change < 0) { } // If you lose fish...
-        else if (change > 0) { } // If you gain fish...
+        if (change < 0) { animator.Play("LoseCurrency", -1, 0f); } // If you lose fish...
+        else if (change > 0) { animator.Play("GainCurrency", -1, 0f); } // If you gain fish...
     }
 
-    public void SetCurrency(int current)
+    public void SetCurrency(int money)
     {
         TMP_Text text = GameObject.Find("Currency").GetComponent<TMP_Text>();
-        currency = current;
+        currency = money;
         text.text = currency.ToString();
+        CheckRequirement();
     }
 
     public void BuyItem(int cost, string item)
@@ -67,6 +69,15 @@ public class Inventory : MonoBehaviour
             items.Add(item);
             UpdateCurrency(-cost);
             Upgrades(); // Makes sure the newly purchased upgrade is activated.
+        }
+        CheckRequirement();
+    }
+
+    private void CheckRequirement()
+    {
+        if (currency >= requirement)
+        {
+            //
         }
     }
 
@@ -92,7 +103,7 @@ public class Inventory : MonoBehaviour
                         // icon = Resources.Load<Sprite>("/UI/FishWhisperer_Icon");
                     }
                     break;
-                case "Stronger Line": // The fishing mini-game is easier overall.
+                case "Stronger Line": // The fishing mini-game is shorter.
                     if (!strongerLine)
                     {
                         strongerLine = true;
