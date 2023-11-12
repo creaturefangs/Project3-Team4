@@ -3,7 +3,12 @@ guid: 4326e0db49b831143a56d42fce87bbad
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_Centipede_Centipede_w_DeformerMat
+    second: {fileID: 2100000, guid: 6c106bef0f013284980fa93457f85694, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

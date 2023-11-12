@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirtPile Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 562303139e98a9d4fabf969bd4ee6833,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91,6 +96,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2622844774019683113}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 562303139e98a9d4fabf969bd4ee6833,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8161599471425284130}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 562303139e98a9d4fabf969bd4ee6833,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667830773114635497}
   m_SourcePrefab: {fileID: 100100000, guid: 562303139e98a9d4fabf969bd4ee6833, type: 3}
 --- !u!1 &558812683817633670 stripped
 GameObject:
@@ -110,19 +123,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Dirt
+  type: dirt
   onInteract:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8161599471425284130}
+        m_TargetAssemblyTypeName: DiggingController, Assembly-CSharp
+        m_MethodName: Digging
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8161599471425284130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558812683817633670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0795f45ac5a43414e96852b2386228c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersource: {fileID: 0}
+  diggingSFX: {fileID: 8300000, guid: 86b23a31b0e9f544e93c6254854782ee, type: 3}
+  shovelController: {fileID: 0}
+  slider: {fileID: 0}
+  fillSpeed: 1
+  maxValue: 100
+  objectsToInstantiate:
+  - {fileID: 2782680234179606325, guid: ceeae2436a758f74590bdf2e94024d26, type: 3}
+  - {fileID: 7129219820517284874, guid: 476c3b6fdab22b14fb2aaa3a8c5e223b, type: 3}
+  - {fileID: 4704013408707257464, guid: 187b7dcc8e02ded4baf1b745ea24e70c, type: 3}
+--- !u!65 &667830773114635497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558812683817633670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012642095, y: 0.03781179, z: 0.011876622}
+  m_Center: {x: 0.00028228207, y: 0.015361814, z: -0.00042530862}

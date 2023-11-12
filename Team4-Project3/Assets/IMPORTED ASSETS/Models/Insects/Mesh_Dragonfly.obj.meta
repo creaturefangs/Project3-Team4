@@ -3,7 +3,12 @@ guid: f6e0846d3e622ea449bc1785374fd2c9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_DragonflyMat
+    second: {fileID: 2100000, guid: 81ff0897bc3c3bc44b5cf0c776164ff8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

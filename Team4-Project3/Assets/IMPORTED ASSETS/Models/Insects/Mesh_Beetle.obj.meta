@@ -3,7 +3,12 @@ guid: fbecfe3dedcd1c6498ddb304c89fea51
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_BeetleMat
+    second: {fileID: 2100000, guid: 05a724ce5fe05e14f8e91c1672964893, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

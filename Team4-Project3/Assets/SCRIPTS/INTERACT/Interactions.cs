@@ -11,7 +11,7 @@ public class Interactions : MonoBehaviour
     public int raycastDistance = 7;
 
     private GameObject tooltipUI;
-    private TMP_Text tooltipText;
+    public TMP_Text tooltipText;
 
     private bool canInteract = false;
     private GameObject target;
@@ -66,6 +66,12 @@ public class Interactions : MonoBehaviour
                 break;
             case "shovel":
                 Debug.Log("shovel");
+                break;
+            case "net":
+                Debug.Log("net");
+                break;
+            case "dirt":
+                Debug.Log("dirt");
                 break;
             default:
                 break;
