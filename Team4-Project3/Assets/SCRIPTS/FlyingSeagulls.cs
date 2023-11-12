@@ -6,7 +6,7 @@ public class FlyingSeagulls : MonoBehaviour
 {
     private Rigidbody m_Rigidbody;
     public float m_Speed = 5.0f;
-    public float waitTime = 10.0f;
+    public float waitTime = 30f;
     
     
     // Start is called before the first frame update
@@ -28,5 +28,6 @@ public class FlyingSeagulls : MonoBehaviour
     {
         //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
         m_Rigidbody.velocity = transform.forward * m_Speed;
+        
     }
 }

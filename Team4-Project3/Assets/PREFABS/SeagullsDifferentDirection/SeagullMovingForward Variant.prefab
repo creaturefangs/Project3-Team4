@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 5
-  waitTime: 10
+  waitTime: 15
 --- !u!54 &664949209722692766
 Rigidbody:
   m_ObjectHideFlags: 0
