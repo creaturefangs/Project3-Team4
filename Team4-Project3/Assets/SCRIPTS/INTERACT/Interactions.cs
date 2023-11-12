@@ -38,7 +38,7 @@ public class Interactions : MonoBehaviour
     void Update()
     {
         CheckForInteract();
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        if (interactTarget && Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }

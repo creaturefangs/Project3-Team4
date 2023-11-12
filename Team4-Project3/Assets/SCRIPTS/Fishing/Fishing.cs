@@ -90,8 +90,9 @@ public class Fishing : MonoBehaviour
         }
 
         int chance = Random.Range(1, 101);
-        float xRange = Random.Range(610, 631);
-        float zRange = Random.Range(460, 476);
+        Vector3 playerPos = GameObject.Find("First Person Controller Minimal").transform.position;
+        float xRange = Random.Range(playerPos.x - 20f, playerPos.x + 21f);
+        float zRange = Random.Range(playerPos.z - 20f, playerPos.z + 21f);
         float yRotation = Random.Range(1, 361);
         
         GameObject prefab;
@@ -105,9 +106,13 @@ public class Fishing : MonoBehaviour
 
     private void ValidPosition(GameObject fish_obj)
     {
+        float distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
+        // Vector3 terrainHeight;
+        // terrainHeight.y = Terrain.activeTerrain.SampleHeight(fish_obj.transform.position);
         RaycastHit hit;
-        while (Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
+        while ((distance > 50f) || Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
         {
+            distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
             fish_obj.transform.position = new Vector3(Random.Range(610, 631), 44f, Random.Range(460, 476));
         }
     }
