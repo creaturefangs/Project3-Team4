@@ -27,12 +27,12 @@ public class Fishing : MonoBehaviour
 
     private Inventory inv;
 
-    private float minigameLength = 15f; // In seconds.
+    [Header("Mini-Game")]
     public float catchTime = 0f;
+    private float minigameLength = 10f; // In seconds.
     public bool inMinigame = false;
     private GameObject minigameUI;
     private GameObject catchZone;
-    private bool inCatchZone;
 
     private GameObject fish;
     private string rarity;
@@ -49,8 +49,8 @@ public class Fishing : MonoBehaviour
             rarityRare = 100; // 20% chance of spawn.
         }
 
-        minigameUI = GameObject.Find("MinigamePanel").transform.GetChild(0).gameObject;
-        catchZone = minigameUI.transform.GetChild(0).gameObject;
+        minigameUI = transform.GetChild(3).GetChild(0).transform.gameObject;
+        catchZone = minigameUI.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -59,16 +59,10 @@ public class Fishing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)) { inMinigame = !inMinigame; }
         if (inMinigame) // While player is in the fishing mini-game.
         {
-            if (!inCatchZone) { catchTime -= Time.deltaTime; }
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
                 EndMinigame();
             }
-        }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 150.0f);
         }
     }
 
@@ -87,26 +81,31 @@ public class Fishing : MonoBehaviour
     {
         inMinigame = true;
         fish = fish_obj;
-        var uiHeight = minigameUI.GetComponent<RectTransform>().sizeDelta.y;
-        RectTransform rect = catchZone.GetComponent<RectTransform>();
-        minigameUI.SetActive(true);
+        // var uiHeight = minigameUI.GetComponent<RectTransform>().sizeDelta.y;
+        // RectTransform rect = catchZone.GetComponent<RectTransform>();
+        Animator anim = catchZone.GetComponent<Animator>();
+        minigameUI.transform.parent.gameObject.SetActive(true);
 
-        float extra = 0;
-        if (inv.strongerLine) { extra = 0.1f; } // If the player has the Stronger Line shop upgrade, make the viable catch zone larger.
+        // float extra = 0;
+        // if (inv.strongerLine) { extra = 0.1f; } // If the player has the Stronger Line shop upgrade, make the viable catch zone larger.
         rarity = fish.GetComponent<FishBehavior>().rarity;
         switch (rarity)
         {
             case "common":
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
+                anim.speed = 0.15f;
+                //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
             case "uncommon":
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.3f + extra));
+                anim.speed = 0.3f;
+                //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.3f + extra));
                 break;
             case "rare":
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.1f + extra));
+                anim.speed = 0.6f;
+                //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.1f + extra));
                 break;
             default:
-                rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
+                anim.speed = 0.15f;
+                //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
         }
         catchTime = 0f; // Resets the catch progress.
@@ -114,7 +113,7 @@ public class Fishing : MonoBehaviour
 
     private void EndMinigame()
     {
-        minigameUI.SetActive(false);
+        minigameUI.transform.parent.gameObject.SetActive(false);
         CatchFish();
         inMinigame = false;
     }
@@ -135,28 +134,5 @@ public class Fishing : MonoBehaviour
         inv.UpdateCurrency(value);
         Destroy(fish);
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("CatchZone"))
-        {
-            inCatchZone = true;
-            other.gameObject.GetComponent<Image>().color = new Color32(122, 255, 142, 255);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other) // If the needle is inside the catch-zone...
-    {
-        if (other.CompareTag("CatchZone") && inMinigame) { catchTime += Time.deltaTime; }
-    }
-
-    private void OnTriggerExit2D(Collider2D other) // If the needle is outside the catch-zone...
-    {
-        if (other.CompareTag("CatchZone"))
-        {
-            inCatchZone = false;
-            other.gameObject.GetComponent<Image>().color = new Color32(59, 255, 89, 255);
-        }
     }
 }

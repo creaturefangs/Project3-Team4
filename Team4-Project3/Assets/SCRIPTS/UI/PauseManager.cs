@@ -15,7 +15,9 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
-
+        pauseMenuUI = transform.GetChild(3).gameObject;
+        playerUI = transform.GetChild(0).gameObject;
+        helpMenu = pauseMenuUI.transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame

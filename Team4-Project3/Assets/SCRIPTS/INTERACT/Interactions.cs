@@ -14,14 +14,18 @@ public class Interactions : MonoBehaviour
     private TMP_Text tooltipText;
 
     private bool canInteract = false;
+    private GameObject target;
     private string type;
     private UnityEvent interEvent;
+
+    private Fishing fishing;
 
     // Start is called before the first frame update
     void Start()
     {
-        tooltipUI = transform.GetChild(1).gameObject; // Gets the tool-tip panel by climbing down MainUI's children.
+        tooltipUI = transform.GetChild(2).gameObject; // Gets the tool-tip panel by climbing down MainUI's children.
         tooltipText = tooltipUI.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
+        fishing = GetComponent<Fishing>();
     }
 
     // Update is called once per frame
@@ -39,12 +43,13 @@ public class Interactions : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, raycastDistance, interactL))
         {
-            canInteract = true;
+            target = hit.collider.gameObject;
+            interEvent = target.GetComponent<InteractBehavior>().onInteract;
+            type = target.GetComponent<InteractBehavior>().type;
 
-            interEvent = hit.collider.GetComponent<InteractBehavior>().onInteract;
+            canInteract = true;
             tooltipUI.SetActive(true);
             tooltipText.text = "Press E to Interact";
-            type = hit.collider.GetComponent<InteractBehavior>().type;
         }
         else { canInteract = false; tooltipUI.SetActive(false); }
     }
@@ -53,7 +58,8 @@ public class Interactions : MonoBehaviour
     {
         switch (type)
         {
-            case "fishing":
+            case "fish":
+                fishing.StartMinigame(target);
                 break;
             case "rod":
                 Debug.Log("rod");
