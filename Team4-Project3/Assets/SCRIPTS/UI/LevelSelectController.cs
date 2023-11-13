@@ -19,15 +19,14 @@ public class LevelSelectController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void LevelSelect()
     {
-        if (other.CompareTag("PLAYER"))
-        {
+        
+        
 
             levelselectUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        }
-        
+         
     }
 }

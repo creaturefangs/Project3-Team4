@@ -71,8 +71,8 @@ Material:
     - _ReflectionsScale: 22
     - _ReflectionsScrollSpeed: 0.045
     - _ShallowColorDepth: 4
-    - _WaveAmplitude: 0.5
-    - _WaveIntensity: 0.001
+    - _WaveAmplitude: 0.893
+    - _WaveIntensity: 0.019
     - _WaveSpeed: 1
     - _Waves: 1
     - __dirty: 0
