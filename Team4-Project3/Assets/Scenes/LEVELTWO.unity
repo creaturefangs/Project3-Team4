@@ -905,7 +905,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7843291686164216370}
     - target: {fileID: 3858916081643765010, guid: 765729eb16887e54d84a5e9be129591a,
         type: 3}
       propertyPath: m_Name
@@ -13396,6 +13396,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7843291686164216366}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7843291686164216370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3388217094991400543, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7843291686164216366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9016943294602887881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13478,5 +13484,5 @@ SceneRoots:
   - {fileID: 156675639}
   - {fileID: 860372715}
   - {fileID: 631127107}
-  - {fileID: 188447573}
   - {fileID: 803943039}
+  - {fileID: 188447573}
