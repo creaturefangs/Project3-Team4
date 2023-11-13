@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,9 +22,11 @@ public class DiggingController : MonoBehaviour
     private bool isEKeyDown = false;
     private bool hasRun = false; // Flag to track if the code has run
 
+    private Interactions interactions;
+
     void Start()
     {
-        
+        interactions = GameObject.Find("MainUI").GetComponentInChildren<Interactions>();
     }
 
     // Update is called once per frame
@@ -32,17 +35,20 @@ public class DiggingController : MonoBehaviour
         // Check if the "E" key is being held down
         isEKeyDown = Input.GetKey(KeyCode.E);
 
-        // Fill the slider only when the "E" key is being held down
-        if (isEKeyDown)
+        if (interactions.canDig)
         {
-            FillSlider();
-            diggingUI.SetActive(true);
-        }
-        else
-        {
-            // Stop filling the slider when the "E" key is not pressed
-            StopDigging();
-            diggingUI.SetActive(false);
+            // Fill the slider only when the "E" key is being held down
+            if (isEKeyDown)
+            {
+                FillSlider();
+                diggingUI.SetActive(true);
+            }
+            else
+            {
+                // Stop filling the slider when the "E" key is not pressed
+                StopDigging();
+                diggingUI.SetActive(false);
+            }
         }
     }
 

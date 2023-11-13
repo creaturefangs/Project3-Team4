@@ -8920,6 +8920,7 @@ MonoBehaviour:
   tooltipUI: {fileID: 6063919493841112490}
   tooltipText: {fileID: 1967264319029056795}
   canInteract: 1
+  canDig: 0
 --- !u!1 &6186733763936133962
 GameObject:
   m_ObjectHideFlags: 0
@@ -10257,7 +10258,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 130833488687232499}
   - {fileID: 2791055537710422231}
   - {fileID: 8073592198842017445}
   - {fileID: 2647459405402987123}
@@ -10265,6 +10265,7 @@ RectTransform:
   - {fileID: 7106190291501698451}
   - {fileID: 5912655437174668840}
   - {fileID: 2406152646682698975}
+  - {fileID: 130833488687232499}
   m_Father: {fileID: 1144322294079320123}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10343,6 +10344,7 @@ MonoBehaviour:
   tooltipUI: {fileID: 0}
   tooltipText: {fileID: 0}
   canInteract: 1
+  canDig: 0
 --- !u!114 &6799842632619366068
 MonoBehaviour:
   m_ObjectHideFlags: 0

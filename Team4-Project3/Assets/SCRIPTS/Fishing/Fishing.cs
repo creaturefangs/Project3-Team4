@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -12,6 +13,7 @@ public class Fishing : MonoBehaviour
     private int maxFish = 10;
     private int currentFish = 0;
     private LayerMask water;
+    private float waterLevel;
 
     [Header("Fish Prefabs")]
     public GameObject commonFish;
@@ -60,6 +62,19 @@ public class Fishing : MonoBehaviour
 
         water = LayerMask.NameToLayer("Water");
         InvokeRepeating("SpawnFish", 0f, 15f);
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "LEVELONE":
+                waterLevel = 50f;
+                break;
+            case "LEVELTWO":
+                waterLevel = 44f;
+                break;
+            default:
+                waterLevel = 44f;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -100,7 +115,7 @@ public class Fishing : MonoBehaviour
         else if (rarityCommon < chance && chance <= rarityUncommon) { prefab = uncommonFish; }
         else { prefab = rareFish; }
 
-        GameObject newFish = Instantiate(prefab, new Vector3(xRange, 44f, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
+        GameObject newFish = Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
         ValidPosition(newFish);
     }
 

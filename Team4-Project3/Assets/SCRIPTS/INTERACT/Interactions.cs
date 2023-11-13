@@ -23,6 +23,8 @@ public class Interactions : MonoBehaviour
     private PauseManager pause;
     private Inventory inv;
 
+    [HideInInspector] public bool canDig = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,7 @@ public class Interactions : MonoBehaviour
             type = target.GetComponent<InteractBehavior>().type;
 
             interactTarget = true;
+            tooltipUI.SetActive(true);
             switch (type)
             {
                 case "fish":
@@ -63,15 +66,19 @@ public class Interactions : MonoBehaviour
                     if (inv.currency >= inv.requirement) { tooltipText.text = "Press E to Choose Level"; }
                     else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more fish to leave for the day!"; }
                     break;
+                case "dirt":
+                    canDig = true;
+                    tooltipUI.SetActive(false);
+                    break;
                 default:
                     tooltipText.text = "Press E to Interact";
                     break;
             }
-            tooltipUI.SetActive(true);
         }
         else
         {
             interactTarget = false;
+            canDig = false;
             if (!fishing.inMinigame) { tooltipUI.SetActive(false); }
         }
     }
