@@ -11,52 +11,52 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 8.822133
+      value: 7.5407
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.822133
+      value: 7.5407
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.822132
+      value: 7.5407
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6532
+      value: 633.13
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.66
+      value: 48.25
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.29
+      value: 448.44
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.014110976
+      value: 0.6586933
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.014110992
+      value: -0.6586933
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.706966
+      value: -0.2571443
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.706966
+      value: -0.2571443
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
@@ -71,12 +71,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -897.713
+      value: -762.65
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_Name
       value: FishingCabinLevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: dcd2e453903b424458434b3873f9b51a, type: 3}
@@ -113,8 +118,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9862896, y: 0.8772399, z: 0.64769125}
@@ -134,4 +139,16 @@ MonoBehaviour:
   type: home
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
