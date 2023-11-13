@@ -110,9 +110,9 @@ public class Fishing : MonoBehaviour
         // Vector3 terrainHeight;
         // terrainHeight.y = Terrain.activeTerrain.SampleHeight(fish_obj.transform.position);
         RaycastHit hit;
-        while ((distance > 50f) || Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
+        while (Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
         {
-            distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
+            // distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
             fish_obj.transform.position = new Vector3(Random.Range(610, 631), 44f, Random.Range(460, 476));
         }
     }

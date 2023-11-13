@@ -187,7 +187,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelselectUI
       value: 
-      objectReference: {fileID: 1506283133}
+      objectReference: {fileID: 0}
     - target: {fileID: 3858916081643765010, guid: 765729eb16887e54d84a5e9be129591a,
         type: 3}
       propertyPath: m_Name
@@ -422,7 +422,7 @@ MonoBehaviour:
   skyBoxMaterial: {fileID: 2100000, guid: 6134fe4694ae79548b83d3e8ff983a21, type: 2}
   timeMultiplier: 500
   startHour: 8
-  timeText: {fileID: 1748293621}
+  timeText: {fileID: 0}
   sunLight: {fileID: 1127795538}
   sunriseHour: 6
   sunsetHour: 18
@@ -1243,12 +1243,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 15792064}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1506283133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 255740977758948736, guid: 765c8e488d750a444821148e082b298b,
-    type: 3}
-  m_PrefabInstance: {fileID: 773977208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525963914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,18 +1311,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1748293621 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4443978918203559258, guid: 765c8e488d750a444821148e082b298b,
-    type: 3}
-  m_PrefabInstance: {fileID: 773977208}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1758137045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1975374320787275347, guid: db132a57c62fb8142830e91189ab3c1a,
@@ -1475,7 +1457,7 @@ GameObject:
   - component: {fileID: 2036117785}
   - component: {fileID: 2036117784}
   - component: {fileID: 2036117783}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WaterPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
