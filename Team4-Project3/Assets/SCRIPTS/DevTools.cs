@@ -7,12 +7,16 @@ public class DevTools : MonoBehaviour
     public bool devTools = false;
     public KeyCode toggleKey = KeyCode.Keypad0;
 
+    private Fishing fishing;
+    private Inventory inv;
+
     private int originalCurrency;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fishing = GetComponent<Fishing>();
+        inv = GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -27,14 +31,12 @@ public class DevTools : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            Fishing fishing = GetComponent<Fishing>();
             fishing.SpawnFish();
         }
     }
 
     private void ToggleUpgrades()
     {
-        Inventory inv = GetComponent<Inventory>();
         inv.fishWhisperer = true;
         inv.bountifulHarvest = true;
         inv.strongerLine = true;
@@ -42,7 +44,6 @@ public class DevTools : MonoBehaviour
 
     private void InfiniteMoney()
     {
-        Inventory inv = GetComponent<Inventory>();
         if (devTools)
         {
             originalCurrency = inv.currency;
@@ -56,7 +57,6 @@ public class DevTools : MonoBehaviour
 
     private void EasyMinigame()
     {
-        Fishing fishing = GetComponent<Fishing>();
         if (devTools)
         {
             fishing.speedCommon = 0.1f;

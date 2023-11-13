@@ -11,16 +11,24 @@ public class FishBehavior : MonoBehaviour
     private float speed = 0.5f;
     private Fishing fishing;
 
+    public bool inWater;
+
     // Start is called before the first frame update
     void Start()
     {
         hook = GameObject.Find("FishingHook");
+        fishing = GameObject.Find("MainUI").GetComponentInChildren<Fishing>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // NoticeHook();
+        if (!inWater)
+        {
+            Vector3 playerPos = GameObject.Find("First Person Controller Minimal").transform.position;
+            transform.position = new Vector3(Random.Range(playerPos.x - 20f, playerPos.x + 21f), fishing.waterLevel, Random.Range(playerPos.z - 20f, playerPos.z + 21f));
+        }
     }
 
     private void NoticeHook()
@@ -38,5 +46,23 @@ public class FishBehavior : MonoBehaviour
         }
 
         if (distance < 5f && Input.GetKeyDown(KeyCode.E)) { fishing.StartMinigame(gameObject); } // Starts the mini-game if close enough to the hook and the player presses E.
+    }
+
+    private void OnTriggerEnter(Collider other) // Make sure either the fish or water have a RigidBody!
+    {
+        Debug.Log("im in a trigger wehoo");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            Debug.Log("in da water");
+            inWater = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            inWater = false;
+        }
     }
 }

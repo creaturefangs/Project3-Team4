@@ -13,7 +13,7 @@ public class Fishing : MonoBehaviour
     private int maxFish = 10;
     private int currentFish = 0;
     private LayerMask water;
-    private float waterLevel;
+    public float waterLevel;
 
     [Header("Fish Prefabs")]
     public GameObject commonFish;
@@ -86,8 +86,9 @@ public class Fishing : MonoBehaviour
             timer.text = (minigameLength - catchTime).ToString("F1"); // "F1" shows only to first decimal place.
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
             {
-                EndMinigame();
+                EndMinigame(true);
             }
+            else if (catchTime <= 0) { EndMinigame(false); }
         }
     }
 
@@ -115,20 +116,22 @@ public class Fishing : MonoBehaviour
         else if (rarityCommon < chance && chance <= rarityUncommon) { prefab = uncommonFish; }
         else { prefab = rareFish; }
 
-        GameObject newFish = Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
-        ValidPosition(newFish);
+        Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
     }
 
     private void ValidPosition(GameObject fish_obj)
     {
-        float distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
+        Vector3 playerPos = GameObject.Find("First Person Controller Minimal").transform.position;
+        float distance = Vector3.Distance(fish_obj.transform.position, playerPos);
+        bool inWater = fish_obj.GetComponent<FishBehavior>().inWater;
         // Vector3 terrainHeight;
         // terrainHeight.y = Terrain.activeTerrain.SampleHeight(fish_obj.transform.position);
-        RaycastHit hit;
-        while (Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)) // While there's anything above the fish that isn't water...
+        // RaycastHit hit;
+        while (!inWater) // Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)
         {
             // distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
-            fish_obj.transform.position = new Vector3(Random.Range(610, 631), 44f, Random.Range(460, 476));
+            fish_obj.transform.position = new Vector3(Random.Range(playerPos.x - 20f, playerPos.x + 21f), 44f, Random.Range(playerPos.z - 20f, playerPos.z + 21f));
+            inWater = fish_obj.GetComponent<FishBehavior>().inWater;
         }
     }
 
@@ -170,10 +173,10 @@ public class Fishing : MonoBehaviour
         catchTime = 0f; // Resets the catch progress.
     }
 
-    private void EndMinigame()
+    private void EndMinigame(bool caught_fish)
     {
         meter.transform.parent.gameObject.SetActive(false);
-        CatchFish();
+        if (caught_fish) { CatchFish(); }
         inMinigame = false;
         pause.ExitMenu();
     }

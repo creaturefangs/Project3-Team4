@@ -29,7 +29,7 @@ public class Interactions : MonoBehaviour
     void Start()
     {
         tooltipUI = transform.GetChild(2).gameObject; // Gets the tool-tip panel by climbing down MainUI's children.
-        tooltipText = tooltipUI.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
+        tooltipText = tooltipUI.GetComponentInChildren<TMP_Text>();
         fishing = GetComponent<Fishing>();
         pause = GetComponentInParent<PauseManager>();
         inv = GetComponent<Inventory>();
