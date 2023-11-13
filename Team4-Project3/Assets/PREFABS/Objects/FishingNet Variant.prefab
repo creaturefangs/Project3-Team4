@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -529.8847
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16775
+      value: -556.7596
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.987
+      value: 535.1093
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
@@ -46,17 +46,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d501de0528814c2489d9b1c56aeecaa9,
         type: 3}
@@ -161,6 +161,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &595765384961716216
 BoxCollider:

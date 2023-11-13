@@ -120,7 +120,7 @@ public class DayNightCycleV2 : MonoBehaviour
 
         if (timeText != null)
         {
-            timeText.text = currentTime.ToString("HH:mm");
+        timeText.text = currentTime.ToString("HH:mm");
         }
     }
 
