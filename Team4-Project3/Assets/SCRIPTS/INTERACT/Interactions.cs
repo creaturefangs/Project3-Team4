@@ -10,8 +10,8 @@ public class Interactions : MonoBehaviour
     public LayerMask interactL;
     public int raycastDistance = 5;
 
-    private GameObject tooltipUI;
-    private TMP_Text tooltipText;
+    public GameObject tooltipUI;
+    public TMP_Text tooltipText;
 
     public bool canInteract = true;
     private bool interactTarget = false;

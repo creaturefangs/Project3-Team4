@@ -11,10 +11,13 @@ public class NettingController : MonoBehaviour
     public List<GameObject> WaterCritters;
     public List<GameObject> LandCritters;
 
+    public Animator FishingNet;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            FishingNet.SetBool("netting",true);
             TryCatchAnimal();
         }
     }
