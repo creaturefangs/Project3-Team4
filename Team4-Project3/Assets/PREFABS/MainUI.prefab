@@ -7656,7 +7656,7 @@ MonoBehaviour:
   - {fileID: 5039197098094209019}
   - {fileID: 8927290804107967698}
   - {fileID: 4906113027029389404}
-  pauseSound: {fileID: 0}
+  pauseSound: {fileID: 7622219435659350920}
   pauseSFX: {fileID: 8300000, guid: 70c498db10a5caf4c9174292a7543e51, type: 3}
 --- !u!114 &1314652340991982529
 MonoBehaviour:
