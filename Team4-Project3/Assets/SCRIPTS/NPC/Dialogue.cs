@@ -36,6 +36,7 @@ public class Dialogue : MonoBehaviour
         {
             if(textComponent.text == lines[index])
             {
+                ClearLine();
                 NextLine();
                 voice.Stop();
             }
@@ -61,6 +62,10 @@ public class Dialogue : MonoBehaviour
             voice.Play();
             yield return new WaitForSeconds(textSpeed);
             voice.Stop();
+            if (updateCheck == false && playerIsNear == false)
+            {
+                break;
+            }
         }
     }
 
@@ -81,6 +86,11 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    void ClearLine()
+    {
+        textComponent.text = string.Empty;
+    }
+
     public void PlayerIsNearTrue()
     {
         updateCheck = true;
@@ -92,5 +102,6 @@ public class Dialogue : MonoBehaviour
         updateCheck = false;
         playerIsNear = false;
         StopCoroutine(TypeLine());
+        textComponent.text = string.Empty; 
     }
 }
