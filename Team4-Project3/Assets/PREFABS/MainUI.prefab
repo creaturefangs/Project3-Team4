@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 6965382223782749616}
   - component: {fileID: 786368714764956265}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: caughtxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2558,7 +2558,7 @@ GameObject:
   - component: {fileID: 1277242885553607273}
   - component: {fileID: 4855408003750716504}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: failuretxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8583,7 +8583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3448787151801701415
 RectTransform:
   m_ObjectHideFlags: 0

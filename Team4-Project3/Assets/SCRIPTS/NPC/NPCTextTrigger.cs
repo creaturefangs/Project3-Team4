@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCTextTrigger : MonoBehaviour
 {
     public Dialogue dialogueComp;
+    public GameObject Textbox;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class NPCTextTrigger : MonoBehaviour
     {
         if(other.tag == "PLAYER")
         {
+            Textbox.SetActive(true);
             dialogueComp.PlayerIsNearTrue();
         }
     }
@@ -30,6 +32,7 @@ public class NPCTextTrigger : MonoBehaviour
     {
         if(other.tag == "PLAYER")
         {
+            Textbox.SetActive(false);
             dialogueComp.PlayerIsNearFalse();
         }
     }
