@@ -12,8 +12,11 @@ public class NettingController : MonoBehaviour
     public GameObject NettingUI;
     public TMP_Text failureTXT;
     public TMP_Text caughtTXT;
+    public AudioSource NetSource;
+    public AudioClip swingSFX;
     public List<GameObject> WaterCritters;
     public List<GameObject> LandCritters;
+
 
     public Animator FishingNet;
 
@@ -22,6 +25,7 @@ public class NettingController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             FishingNet.SetBool("netting",true);
+            NetSource.PlayOneShot(swingSFX);
             TryCatchAnimal();
         }
     }
@@ -57,8 +61,8 @@ public class NettingController : MonoBehaviour
             // Instantiate a random object from the list
             InstantiateWaterCritter();
 
-
             // Display catch message
+            NettingUI.SetActive(true);
             DisplayCatchMessage(WaterCritters[randomIndex].name);
         }
         else
@@ -83,13 +87,14 @@ public class NettingController : MonoBehaviour
             // Instantiate a random object from the list
             InstantiateLandCritter();
 
-
             // Display catch message
+            NettingUI.SetActive(true);
             DisplayCatchMessage(LandCritters[randomIndex].name);
         }
         else
         {
             Debug.Log("Missed the catch on the land.");
+
             // Animal escaped
             DisplayFailureMessage("You haven't caught anything!");
         }
@@ -134,6 +139,7 @@ public class NettingController : MonoBehaviour
         if (caughtTXT != null)
         {
             caughtTXT.text = "You have caught: " + animalName;
+            StartCoroutine(HideMessage());
         }
         else
         {
@@ -149,7 +155,7 @@ public class NettingController : MonoBehaviour
             failureTXT.text = message;
 
             // Start a coroutine to hide the failure message after a few seconds
-            StartCoroutine(HideFailureMessage());
+            StartCoroutine(HideMessage());
         }
         else
         {
@@ -157,13 +163,15 @@ public class NettingController : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator HideFailureMessage()
+    private System.Collections.IEnumerator HideMessage()
     {
         // Wait for a few seconds before hiding the failure message
         yield return new WaitForSeconds(2f);
 
         // Hide the failure message
+        NettingUI.SetActive(false);
         failureTXT.text = "";
+        caughtTXT.text = "";
     }
 
 }

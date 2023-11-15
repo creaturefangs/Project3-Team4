@@ -52,7 +52,7 @@ public class PauseManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
         gameIsPaused = false;
-        AudioListener.pause = false;
+        
         pauseSound.PlayOneShot(pauseSFX);
     }
 
@@ -64,7 +64,8 @@ public class PauseManager : MonoBehaviour
         playerUI.SetActive(false);
         gameIsPaused = true;
         pauseSound.PlayOneShot(pauseSFX);
-        AudioListener.pause = false;
+        
+        
     }
 
     public void EnterMenu() // Enables and disables various things that shouldn't be accessible in menus/UI (like player/camera movement, interactions, the cursor...)
