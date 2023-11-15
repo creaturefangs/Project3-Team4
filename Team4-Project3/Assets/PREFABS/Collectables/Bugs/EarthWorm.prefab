@@ -73,13 +73,86 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 666602370706033372, guid: 4f526cbf69241134caf52d1f8805ae47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4f526cbf69241134caf52d1f8805ae47,
         type: 3}
       propertyPath: m_Name
-      value: EarthWarm_10 Variant
+      value: EarthWorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f526cbf69241134caf52d1f8805ae47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f526cbf69241134caf52d1f8805ae47,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1729297304188339955}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f526cbf69241134caf52d1f8805ae47,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6214356792533425095}
   m_SourcePrefab: {fileID: 100100000, guid: 4f526cbf69241134caf52d1f8805ae47, type: 3}
+--- !u!1 &2782680234179606325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f526cbf69241134caf52d1f8805ae47,
+    type: 3}
+  m_PrefabInstance: {fileID: 3053292387725707876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1729297304188339955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782680234179606325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: bug
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2782680234179606325}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &6214356792533425095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782680234179606325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 96.75064, y: 66.143105, z: 86.207016}
+  m_Center: {x: -16.547625, y: 32.57156, z: 13.949694}

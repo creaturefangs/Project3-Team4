@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9132679066403306530
+--- !u!1001 &4573291759175421720
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       propertyPath: m_Name
-      value: FishingCabinLevelSelect 1
+      value: FishingCabinLevelSelect 1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
@@ -91,29 +91,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9165926165696672886}
+      addedObject: {fileID: 4537863632537306956}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5710695702570564094}
+      addedObject: {fileID: 1047690384510241476}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7944616707462094815}
+      addedObject: {fileID: 3425727948100693221}
   m_SourcePrefab: {fileID: 100100000, guid: dcd2e453903b424458434b3873f9b51a, type: 3}
---- !u!1 &2117008329508521686 stripped
+--- !u!1 &5500713228462724625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dcd2e453903b424458434b3873f9b51a,
     type: 3}
-  m_PrefabInstance: {fileID: 9132679066403306530}
+  m_PrefabInstance: {fileID: 4573291759175421720}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &9165926165696672886
+--- !u!65 &4537863632537306956
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117008329508521686}
+  m_GameObject: {fileID: 5500713228462724625}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -128,13 +128,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9862896, y: 0.8772399, z: 0.64769125}
   m_Center: {x: 0.008932054, y: 0.3601106, z: 0.05712667}
---- !u!114 &5710695702570564094
+--- !u!114 &1047690384510241476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117008329508521686}
+  m_GameObject: {fileID: 5500713228462724625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
@@ -144,7 +144,7 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7944616707462094815}
+      - m_Target: {fileID: 3425727948100693221}
         m_TargetAssemblyTypeName: LevelSelectController, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 1
@@ -156,13 +156,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &7944616707462094815
+--- !u!114 &3425727948100693221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117008329508521686}
+  m_GameObject: {fileID: 5500713228462724625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd84208bb69d90f409938c6326d95112, type: 3}

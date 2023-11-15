@@ -73,13 +73,86 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8135253815291735496, guid: 4326e0db49b831143a56d42fce87bbad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4326e0db49b831143a56d42fce87bbad,
         type: 3}
       propertyPath: m_Name
       value: Mesh_Centipede Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4326e0db49b831143a56d42fce87bbad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4326e0db49b831143a56d42fce87bbad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5676463575303348335}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4326e0db49b831143a56d42fce87bbad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 346325770570617637}
   m_SourcePrefab: {fileID: 100100000, guid: 4326e0db49b831143a56d42fce87bbad, type: 3}
+--- !u!1 &4704013408707257464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4326e0db49b831143a56d42fce87bbad,
+    type: 3}
+  m_PrefabInstance: {fileID: 5587113997970610473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5676463575303348335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4704013408707257464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: bug
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4704013408707257464}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &346325770570617637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4704013408707257464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 42.7134, y: 16.337755, z: 84.353615}
+  m_Center: {x: 4.2815714, y: 4.4019275, z: 0.3473451}

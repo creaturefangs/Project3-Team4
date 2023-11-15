@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d302b827462211f42a2e9ab97ab39dfa,
         type: 3}
       propertyPath: m_Name
-      value: Mesh_Halibut Variant
+      value: Fish_Halibut
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d302b827462211f42a2e9ab97ab39dfa,
         type: 3}
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: rare
+  inWater: 0
 --- !u!114 &8253074696894334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,5 +160,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 60, y: 15, z: 150}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 103.295715, y: 29.968782, z: 177.61517}
+  m_Center: {x: -0.20614697, y: 2.260807, z: -5.6590996}

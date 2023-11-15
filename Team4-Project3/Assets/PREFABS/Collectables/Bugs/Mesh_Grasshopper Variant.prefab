@@ -78,8 +78,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mesh_Grasshopper Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eedd7099b0548e64994dfe3b781c94bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773580120889065090, guid: eedd7099b0548e64994dfe3b781c94bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eedd7099b0548e64994dfe3b781c94bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7403189843971296213}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eedd7099b0548e64994dfe3b781c94bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9208856400898272122}
   m_SourcePrefab: {fileID: 100100000, guid: eedd7099b0548e64994dfe3b781c94bd, type: 3}
+--- !u!1 &6698532659067955822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eedd7099b0548e64994dfe3b781c94bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5779418113910249279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7403189843971296213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698532659067955822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6698532659067955822}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &9208856400898272122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698532659067955822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 102.029724, y: 71.631645, z: 137.00217}
+  m_Center: {x: 1.0038627, y: 4.7380853, z: 2.074547}

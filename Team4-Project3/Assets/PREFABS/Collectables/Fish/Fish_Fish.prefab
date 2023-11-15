@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8501e06089e05554a96d5cedcc84485f,
         type: 3}
       propertyPath: m_Name
-      value: Mesh_Fish Variant
+      value: Fish_Fish
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8501e06089e05554a96d5cedcc84485f,
         type: 3}
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: common
+  inWater: 0
 --- !u!114 &4119464357849902870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,5 +160,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15, y: 25, z: 70}
-  m_Center: {x: -1.5, y: 2, z: 0}
+  m_Size: {x: 39.120113, y: 41.121002, z: 70}
+  m_Center: {x: -1.3138733, y: 1.1743437, z: 0}
