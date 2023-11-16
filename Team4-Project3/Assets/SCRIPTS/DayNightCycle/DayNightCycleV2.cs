@@ -81,6 +81,7 @@ public class DayNightCycleV2 : MonoBehaviour
     [Header("Is it day or night")]
 
     public bool day;
+    public bool night;  
     
 
     // Start is called before the first frame update
@@ -128,12 +129,16 @@ public class DayNightCycleV2 : MonoBehaviour
     {
         if (timeText.text == "07:05") // Sunrise
         {
+            day = true;
+            night = false;
             dayTime = Color.blue;
             //float lerp = Mathf.PingPong(Time.time, duration) / duration;
             //RenderSettings.skybox.SetColor("_SkyColor", Color.Lerp(nightTime, dayTime, lerp));
         }
         else if (timeText.text == "20:05") // SunSet
         {
+            night = true;
+            day = false;
             nightTime = Color.black;
             //float lerp = Mathf.PingPong(Time.time, duration) / duration;
             //RenderSettings.skybox.SetColor("_SkyColor", Color.Lerp(dayTime, nightTime, lerp));
