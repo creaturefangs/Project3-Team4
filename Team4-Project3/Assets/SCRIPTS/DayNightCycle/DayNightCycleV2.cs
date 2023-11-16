@@ -82,7 +82,11 @@ public class DayNightCycleV2 : MonoBehaviour
 
     public bool day;
     public bool night;  
-    
+
+    [Header("Audio Manager References")]
+
+    public AudioClip dayTrack;
+    public AudioClip nightTrack;
 
     // Start is called before the first frame update
     void Start()
@@ -131,6 +135,7 @@ public class DayNightCycleV2 : MonoBehaviour
         {
             day = true;
             night = false;
+            AudioManager.instance.SwapTrack(dayTrack);
             dayTime = Color.blue;
             //float lerp = Mathf.PingPong(Time.time, duration) / duration;
             //RenderSettings.skybox.SetColor("_SkyColor", Color.Lerp(nightTime, dayTime, lerp));
@@ -139,6 +144,7 @@ public class DayNightCycleV2 : MonoBehaviour
         {
             night = true;
             day = false;
+            AudioManager.instance.SwapTrack(nightTrack);
             nightTime = Color.black;
             //float lerp = Mathf.PingPong(Time.time, duration) / duration;
             //RenderSettings.skybox.SetColor("_SkyColor", Color.Lerp(dayTime, nightTime, lerp));
