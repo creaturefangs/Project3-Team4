@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip defaultAmbience;
     private AudioSource track01, track02;
     private bool isPlayingTrack01;
+
+    public int activateTime = 0;
     
     public static AudioManager instance;
 
@@ -33,7 +35,26 @@ public class AudioManager : MonoBehaviour
         //StopAllCorountines();
         StartCoroutine(FadeTrack(newClip)); //this is if we want to make the audio get triggered by a collider Ex. Entering into a dark hallway
 
-        isPlayingTrack01 = !isPlayingTrack01;
+        activateTime++;
+
+        if(activateTime == 0)
+        {
+            isPlayingTrack01 = isPlayingTrack01;
+        }
+        else if(activateTime == 1)
+        {
+            isPlayingTrack01 = !isPlayingTrack01;
+        }
+    }
+
+    public void activateTimeZero()
+    {
+        activateTime = 0;
+    }
+    
+    public void activateTimeOne()
+    {
+        activateTime = 1;
     }
 
     public void ReturnToDefault()
