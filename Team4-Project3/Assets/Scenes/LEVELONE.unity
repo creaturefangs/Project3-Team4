@@ -1475,6 +1475,7 @@ GameObject:
   - component: {fileID: 911464916}
   - component: {fileID: 911464915}
   - component: {fileID: 911464914}
+  - component: {fileID: 911464917}
   m_Layer: 0
   m_Name: WoodenDocks_Complete (1)
   m_TagString: Untagged
@@ -1541,12 +1542,34 @@ Transform:
   m_GameObject: {fileID: 911464913}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -658.8906, y: -557.2523, z: 565.34}
+  m_LocalPosition: {x: -658.8906, y: -557.49994, z: 565.34}
   m_LocalScale: {x: 84.756195, y: 100, z: 180}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1021089248}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+--- !u!64 &911464917
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911464913}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5510776075777179962, guid: 2290eb408e3071d428597ce36af3adc0, type: 3}
 --- !u!1001 &996879324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3351,6 +3374,7 @@ GameObject:
   - component: {fileID: 1967816768}
   - component: {fileID: 1967816767}
   - component: {fileID: 1967816766}
+  - component: {fileID: 1967816769}
   m_Layer: 0
   m_Name: WoodenDocks_Complete (2)
   m_TagString: Untagged
@@ -3417,12 +3441,34 @@ Transform:
   m_GameObject: {fileID: 1967816765}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0052662897, y: 0.70708716, z: 0.70708716, w: 0.0052662883}
-  m_LocalPosition: {x: -661.03064, y: -557.17236, z: 553.25}
+  m_LocalPosition: {x: -661.03064, y: -557.42, z: 553.25}
   m_LocalScale: {x: 84.756195, y: 100, z: 180}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1021089248}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 179.147}
+--- !u!64 &1967816769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967816765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5510776075777179962, guid: 2290eb408e3071d428597ce36af3adc0, type: 3}
 --- !u!1001 &2011266364
 PrefabInstance:
   m_ObjectHideFlags: 0
