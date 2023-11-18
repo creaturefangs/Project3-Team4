@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9873fbde6fe03504a9da2612241c5d71, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 968cf975186e79640947476634e38cac, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -534,6 +534,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasHolderFarmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 185.99878
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 185.99878
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 185.99881
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.465
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3943,17 +3968,17 @@ PrefabInstance:
     - target: {fileID: 1975374320787275347, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -498.10068
+      value: -506.31
       objectReference: {fileID: 0}
     - target: {fileID: 1975374320787275347, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -555.52234
+      value: -555.47
       objectReference: {fileID: 0}
     - target: {fileID: 1975374320787275347, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 522.49
+      value: 532.3
       objectReference: {fileID: 0}
     - target: {fileID: 1975374320787275347, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}
@@ -4036,17 +4061,17 @@ PrefabInstance:
     - target: {fileID: 109912344797063379, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -493.81067
+      value: -507.613
       objectReference: {fileID: 0}
     - target: {fileID: 109912344797063379, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -554.5023
+      value: -554.05
       objectReference: {fileID: 0}
     - target: {fileID: 109912344797063379, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 525.75
+      value: 534.37
       objectReference: {fileID: 0}
     - target: {fileID: 109912344797063379, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
