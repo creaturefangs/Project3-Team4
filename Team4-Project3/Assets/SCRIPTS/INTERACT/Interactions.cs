@@ -22,6 +22,7 @@ public class Interactions : MonoBehaviour
     private Fishing fishing;
     private PauseManager pause;
     private Inventory inv;
+    private ShopUIManager shopUI;
 
     [HideInInspector] public bool canDig = false;
 
@@ -34,6 +35,7 @@ public class Interactions : MonoBehaviour
         pause = GetComponentInParent<PauseManager>();
         inv = GetComponent<Inventory>();
         canInteract = true;
+        shopUI = GetComponent<ShopUIManager>();
     }
 
     // Update is called once per frame
@@ -97,6 +99,10 @@ public class Interactions : MonoBehaviour
                     levelSelectUI.SetActive(true);
                     pause.EnterMenu();
                 }
+                break;
+            case "shop":
+                shopUI.ShopOpen();
+                Debug.Log("shop");
                 break;
             case "rod":
                 Debug.Log("rod");
