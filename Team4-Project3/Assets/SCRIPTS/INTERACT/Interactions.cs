@@ -26,6 +26,8 @@ public class Interactions : MonoBehaviour
 
     [HideInInspector] public bool canDig = false;
 
+    private string currentItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class Interactions : MonoBehaviour
         {
             Interact();
         }
+        currentItem = inv.currentItem;
     }
 
     private void CheckForInteract() // Checks whether an interactable is in front of the player (camera).
@@ -62,14 +65,15 @@ public class Interactions : MonoBehaviour
             switch (type)
             {
                 case "fish":
-                    tooltipText.text = "Press E to begin Mini-Game";
+                    if (currentItem == "Rod Variant") { tooltipText.text = "Press E to begin Mini-Game"; }
+                    else { tooltipText.text = "You need a fishing rod to fish!"; }
                     break;
                 case "home":
                     if (inv.currency >= inv.requirement) { tooltipText.text = "Press E to Choose Level"; }
                     else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more fish to leave for the day!"; }
                     break;
                 case "dirt":
-                    canDig = true;
+                    if (currentItem == "Shovel Variant") { canDig = true; }
                     tooltipUI.SetActive(false);
                     break;
                 default:
@@ -90,7 +94,7 @@ public class Interactions : MonoBehaviour
         switch (type)
         {
             case "fish":
-                fishing.StartMinigame(target);
+                if (currentItem == "Rod Variant") { fishing.StartMinigame(target); }
                 break;
             case "home":
                 GameObject levelSelectUI = transform.parent.GetChild(2).gameObject;

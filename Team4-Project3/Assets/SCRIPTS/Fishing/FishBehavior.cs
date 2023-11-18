@@ -50,10 +50,8 @@ public class FishBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // Make sure either the fish or water have a RigidBody!
     {
-        Debug.Log("im in a trigger wehoo");
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
-            Debug.Log("in da water");
             inWater = true;
         }
     }

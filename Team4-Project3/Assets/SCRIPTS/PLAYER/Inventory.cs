@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public int currency = 0;
     public int requirement;
 
+    public string currentItem;
     public List<string> items;
 
     public bool bountifulHarvest = false;
@@ -40,7 +41,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentItem = CurrentItem();
     }
 
     public void UpdateCurrency(int change)
@@ -79,6 +80,16 @@ public class Inventory : MonoBehaviour
         {
             //
         }
+    }
+
+    private string CurrentItem()
+    {
+        GameObject hand = GameObject.Find("ObjectInHand");
+        foreach (Transform child in hand.transform)
+        {
+            if (child.gameObject.activeSelf) { return child.name; }
+        }
+        return null;
     }
 
     private void Upgrades() // Iterate through player's upgrades and activate them if not already active.
