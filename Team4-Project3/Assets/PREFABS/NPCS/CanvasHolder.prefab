@@ -228,9 +228,11 @@ MonoBehaviour:
   textComponent: {fileID: 1230527311870604994}
   lines:
   - Hello there, you seem to be new to this so i'll help you out.
-  - <How to use Fishing Rod>
-  - <How to use Shovel>
-  - <How to use Fishing Net>
+  - <How to use Fishing Rod> Equip the Fishing pole, get close to a fish to trigger
+    a mini game to catch the fish!
+  - '<How to use Shovel> Equip the Shovel, and find a dirt pile to start digging.  '
+  - '<How to use Fishing Net> Equip the Fishing Net and find a spot where the net
+    icon is to net there. You can loose a catch if you''re not careful! '
   textSpeed: 0.05
   playerIsNear: 0
   updateCheck: 0
@@ -634,4 +636,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 2448773549114533512}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 7751061997936824465}

@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8780036688566417906, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -26,22 +31,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.66
+      value: -623.38367
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: -555.9423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8663
+      value: 612.4949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.20730838
+      value: 0.728446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
@@ -51,7 +56,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97827566
+      value: 0.68510324
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
@@ -66,7 +71,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 156.071
+      value: 86.487
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
@@ -78,10 +83,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: THESHOP Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1826639985424072167, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5373189698150959999, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647679246307317370, guid: 2d6b2335b047e1247b5a3a5ac87b9692,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1743,19 +1758,7 @@ MonoBehaviour:
   type: Shop
   onInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3651687281350651582}
-        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: ShopOpen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!64 &4107982703910760934
 MeshCollider:
   m_ObjectHideFlags: 0
