@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.14
+      value: 57.05
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -1223,21 +1223,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: First Person Controller Minimal
       objectReference: {fileID: 0}
-    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: NettingUI
-      value: 
-      objectReference: {fileID: 1730021476}
-    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: caughtTXT
-      value: 
-      objectReference: {fileID: 1022783712}
-    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: failureTXT
-      value: 
-      objectReference: {fileID: 1022783713}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1288,6 +1273,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600567847689762029, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: NettingUI
+      value: 
+      objectReference: {fileID: 1730021476}
+    - target: {fileID: 8600567847689762029, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: caughtTXT
+      value: 
+      objectReference: {fileID: 1022783712}
+    - target: {fileID: 8600567847689762029, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: failureTXT
+      value: 
+      objectReference: {fileID: 1022783713}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3199,8 +3199,7 @@ PrefabInstance:
       propertyPath: interactshopUI
       value: 
       objectReference: {fileID: 153941327}
-    m_RemovedComponents:
-    - {fileID: 4107982703910760934, guid: 6a83b1f983e86b348b8bbc2dd2147395, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

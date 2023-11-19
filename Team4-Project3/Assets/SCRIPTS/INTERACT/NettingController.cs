@@ -19,7 +19,6 @@ public class NettingController : MonoBehaviour
 
 
     public Animator FishingNetAnim;
-    private GameObject fishingNet;
     private GameObject player;
     public string fishingNetTag = "FishingNet"; // Adjust the tag for your fishing net object
     public string playertag = "PLAYER";
@@ -27,14 +26,9 @@ public class NettingController : MonoBehaviour
     private void Start()
     {
         // Get the Animator component attached to the GameObject
-        FishingNetAnim = fishingNet.GetComponent<Animator>();
+        FishingNetAnim = GetComponent<Animator>();
 
-        fishingNet = GameObject.FindGameObjectWithTag(fishingNetTag);
-
-        if (fishingNet == null)
-        {
-            Debug.LogError("Fishing net object not found. Make sure to tag your fishing net object with the specified tag.");
-        }
+       
 
         player = GameObject.FindGameObjectWithTag(playertag);
 
@@ -57,11 +51,11 @@ public class NettingController : MonoBehaviour
 
     public void TryCatchAnimal()
     {
-        if(IsPlayerInWater())
+        if (IsPlayerInWater())
         {
             TryCatchAnimalInWater();
         }
-        else if (IsPlayerOnLand())
+        else
         {
             TryCatchAnimalOnLand();
         }
@@ -73,10 +67,9 @@ public class NettingController : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, 1f, waterNetting);
     }
 
-    private bool IsPlayerOnLand()
+    private void IsPlayerOnLand()
     {
-        // Check if the player is colliding with the water layer
-        return Physics.Raycast(transform.position, Vector3.down, 1f, landNetting);
+        
     }
 
     private void TryCatchAnimalInWater()
@@ -127,6 +120,7 @@ public class NettingController : MonoBehaviour
             Debug.Log("Missed the catch on the land.");
 
             // Animal escaped
+            NettingUI.SetActive(true);
             DisplayFailureMessage("You haven't caught anything!");
         }
     }
