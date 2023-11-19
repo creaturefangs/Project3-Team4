@@ -285,6 +285,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7, type: 3}
+--- !u!1 &123073313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009774341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &128079262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4851154651662967127, guid: b4f9e27016123374b9fb6ee9c71c4f3f,
@@ -1902,6 +1908,16 @@ PrefabInstance:
       propertyPath: lines.Array.data[1]
       value: I wonder why there are some may seagulls.. this is a pond
       objectReference: {fileID: 0}
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 1035284773}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1988,7 +2004,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 528636577}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1035284773}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -3421,6 +3437,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2483451816689174669, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7,
     type: 3}
   m_PrefabInstance: {fileID: 753781063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &627117919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500118162}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &631127107
 PrefabInstance:
@@ -6654,6 +6676,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1837873789}
     m_Modifications:
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 123073313}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6730,7 +6762,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1009774341}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 123073313}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -6741,6 +6773,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1949335802703065862, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
     type: 3}
   m_PrefabInstance: {fileID: 7843291686164216366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1031891544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553389971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035284773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 528636577}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1114961803 stripped
 Transform:
@@ -6817,6 +6861,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.916523, z: 1}
   m_Center: {x: 0, y: 0.81648445, z: 0}
+--- !u!1 &1211668590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450064355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1213497827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483451816689174669, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7,
@@ -6846,6 +6896,16 @@ PrefabInstance:
         type: 3}
       propertyPath: lines.Array.data[1]
       value: Finally some.. oh hey
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 1332647964}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -6933,7 +6993,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1242375167}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1332647964}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -7125,6 +7185,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d35442ab60c6bfd49b2f113417810e9e, type: 3}
+--- !u!1 &1332647964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1242375167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1354071465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483451816689174669, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7,
@@ -7465,6 +7531,16 @@ PrefabInstance:
       propertyPath: lines.Array.data[1]
       value: Well they do kiddo but only through the water
       objectReference: {fileID: 0}
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 1211668590}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7545,7 +7621,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1450064355}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1211668590}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -7608,6 +7684,16 @@ PrefabInstance:
         type: 3}
       propertyPath: lines.Array.data[1]
       value: Hmm ok we have been looking for him but can't seem to find him.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 627117919}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -7685,7 +7771,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1500118162}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 627117919}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -7858,6 +7944,16 @@ PrefabInstance:
       propertyPath: lines.Array.data[1]
       value: Stay safe!
       objectReference: {fileID: 0}
+    - target: {fileID: 3314412405727110452, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: Textbox
+      value: 
+      objectReference: {fileID: 1031891544}
+    - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7944,7 +8040,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1553389971}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1031891544}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -11734,6 +11830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAmbience: {fileID: 8300000, guid: e7e6d22a01ac3554f8e41efef05c4a40, type: 3}
+  activateTime: 0
 --- !u!1001 &2142929324
 PrefabInstance:
   m_ObjectHideFlags: 0
