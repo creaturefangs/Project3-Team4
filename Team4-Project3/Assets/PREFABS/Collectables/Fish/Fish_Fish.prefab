@@ -81,12 +81,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8501e06089e05554a96d5cedcc84485f,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7043928643034633888, guid: 8501e06089e05554a96d5cedcc84485f,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96,10 +96,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1916408304094345296}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8501e06089e05554a96d5cedcc84485f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4119464357849902870}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8501e06089e05554a96d5cedcc84485f,
         type: 3}
       insertIndex: -1
@@ -125,22 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: common
   inWater: 0
---- !u!114 &4119464357849902870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144836068457703388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: fish
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
+  onHook: 0
 --- !u!65 &5080867351251706087
 BoxCollider:
   m_ObjectHideFlags: 0

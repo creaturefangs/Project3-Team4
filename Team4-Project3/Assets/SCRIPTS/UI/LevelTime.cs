@@ -26,8 +26,8 @@ public class LevelTime : MonoBehaviour
     void Update()
     {
         timeSince += Time.deltaTime;
-        UpdateClock();
-        CheckTimeOfDay();
+        //UpdateClock();
+        //CheckTimeOfDay();
     }
 
     private void UpdateClock()

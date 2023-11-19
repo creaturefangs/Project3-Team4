@@ -65,7 +65,7 @@ public class Interactions : MonoBehaviour
             switch (type)
             {
                 case "fish":
-                    if (currentItem == "Fishing Pole") { tooltipText.text = "Press E to begin Mini-Game"; }
+                    if (currentItem == "FishingPole") { tooltipText.text = "Press E to begin Mini-Game"; }
                     else { tooltipText.text = "You need a fishing rod to fish!"; }
                     break;
                 case "home":
@@ -94,7 +94,7 @@ public class Interactions : MonoBehaviour
         switch (type)
         {
             case "fish":
-                if (currentItem == "Rod Variant") { fishing.StartMinigame(target); }
+                if (currentItem == "FishingPole") { fishing.StartMinigame(target); }
                 break;
             case "home":
                 GameObject levelSelectUI = transform.parent.GetChild(2).gameObject;
