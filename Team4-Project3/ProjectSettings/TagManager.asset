@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PLAYER
   - CatchZone
+  - FishingNet
   layers:
   - Default
   - TransparentFX

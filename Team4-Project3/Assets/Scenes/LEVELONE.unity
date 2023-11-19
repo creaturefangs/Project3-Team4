@@ -483,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 449.3
+      value: 446.57
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -493,12 +493,12 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 535.54
+      value: 537.88
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.66191804
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.74957615
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -523,12 +523,12 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -82.893005
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 7579694042219883355, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -1223,11 +1223,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: First Person Controller Minimal
       objectReference: {fileID: 0}
-    - target: {fileID: 1521937091291543184, guid: 765c8e488d750a444821148e082b298b,
+    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
-      propertyPath: m_Name
-      value: Shovel
-      objectReference: {fileID: 0}
+      propertyPath: NettingUI
+      value: 
+      objectReference: {fileID: 1730021476}
+    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: caughtTXT
+      value: 
+      objectReference: {fileID: 1022783712}
+    - target: {fileID: 839711077598782473, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: failureTXT
+      value: 
+      objectReference: {fileID: 1022783713}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1278,34 +1288,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3325939236003102338, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: m_Name
-      value: FishingPole
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676914843534294039, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: NettingUI
-      value: 
-      objectReference: {fileID: 1730021476}
-    - target: {fileID: 5676914843534294039, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: caughtTXT
-      value: 
-      objectReference: {fileID: 1022783712}
-    - target: {fileID: 5676914843534294039, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: failureTXT
-      value: 
-      objectReference: {fileID: 1022783713}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 64560528584441119, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2027907396}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 765c8e488d750a444821148e082b298b, type: 3}
 --- !u!1 &773977209 stripped
 GameObject:
@@ -3558,28 +3544,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2011266364}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2027907391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 64560528584441119, guid: 765c8e488d750a444821148e082b298b,
-    type: 3}
-  m_PrefabInstance: {fileID: 773977208}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2027907396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027907391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d31d659d784104bb5de3bd3fd48619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tools:
-  - {fileID: 146572936}
-  - {fileID: 773977209}
-  - {fileID: 901199027}
 --- !u!1 &2036024239
 GameObject:
   m_ObjectHideFlags: 0

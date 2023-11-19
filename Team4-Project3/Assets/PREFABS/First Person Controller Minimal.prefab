@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3237117527344096936}
   - component: {fileID: 3578877638547520311}
   - component: {fileID: 295955665133614483}
+  - component: {fileID: 1328091415889407261}
+  - component: {fileID: 839711077598782473}
   m_Layer: 0
   m_Name: First Person Controller Minimal
   m_TagString: PLAYER
@@ -105,6 +107,56 @@ MonoBehaviour:
   canRun: 1
   runSpeed: 9
   runningKey: 304
+--- !u!114 &1328091415889407261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64560528584441119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d31d659d784104bb5de3bd3fd48619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tools:
+  - {fileID: 3325939236003102338}
+  - {fileID: 6906658051891377862}
+  - {fileID: 1521937091291543184}
+--- !u!114 &839711077598782473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64560528584441119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a1164985638024298b2679412b8069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landNetting:
+    serializedVersion: 2
+    m_Bits: 64
+  waterNetting:
+    serializedVersion: 2
+    m_Bits: 128
+  catchChance: 0.3
+  NettingUI: {fileID: 0}
+  failureTXT: {fileID: 0}
+  caughtTXT: {fileID: 0}
+  NetSource: {fileID: 8584320791900113598}
+  swingSFX: {fileID: 8300000, guid: a84c3cbae94bc1c41aa048f35a72d5f5, type: 3}
+  WaterCritters:
+  - {fileID: 6595664370541840382, guid: d380cc89edcf9db40b0e3db21dd36aa4, type: 3}
+  - {fileID: 8144836068457703388, guid: e26f5c768d6f34f42b3622ea0add29e9, type: 3}
+  - {fileID: 320796327898536922, guid: d73f2c7c93474004a96d6c224bcdfe8b, type: 3}
+  LandCritters:
+  - {fileID: 5901269167719230969, guid: 448915c6b916eac489ad00e1f69b6746, type: 3}
+  - {fileID: 6698532659067955822, guid: 92b610c12fe982344b3109fea6ab3b07, type: 3}
+  - {fileID: 2498750282535580132, guid: f41f4d28b0b92584bbe18ff76612424f, type: 3}
+  FishingNetAnim: {fileID: 7913173231081658239}
+  fishingNetTag: FishingNet
 --- !u!1 &285178682555967521
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +1003,7 @@ PrefabInstance:
     - target: {fileID: 778467552882815593, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
       propertyPath: m_Name
-      value: Shovel Variant
+      value: Shovel
       objectReference: {fileID: 0}
     - target: {fileID: 778467552882815593, guid: 0a8b1ceb5dfde7d42a4fba4307c26df4,
         type: 3}
@@ -1054,6 +1106,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
+        type: 3}
+      propertyPath: m_TagString
+      value: FishingNet
+      objectReference: {fileID: 0}
     - target: {fileID: 7571392193109541020, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1137,10 +1194,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5676914843534294039}
-    - targetCorrespondingSourceObject: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7913173231081658239}
     - targetCorrespondingSourceObject: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
@@ -1180,39 +1233,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.5122557, y: 1.6669446, z: 1.3665154}
   m_Center: {x: -1.7561256, y: 1.5552279, z: -0.035279393}
---- !u!114 &5676914843534294039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6906658051891377862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a1164985638024298b2679412b8069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  landNetting:
-    serializedVersion: 2
-    m_Bits: 64
-  waterNetting:
-    serializedVersion: 2
-    m_Bits: 128
-  catchChance: 0.3
-  NettingUI: {fileID: 0}
-  failureTXT: {fileID: 0}
-  caughtTXT: {fileID: 0}
-  NetSource: {fileID: 8584320791900113598}
-  swingSFX: {fileID: 8300000, guid: a84c3cbae94bc1c41aa048f35a72d5f5, type: 3}
-  WaterCritters:
-  - {fileID: 6595664370541840382, guid: d380cc89edcf9db40b0e3db21dd36aa4, type: 3}
-  - {fileID: 8144836068457703388, guid: e26f5c768d6f34f42b3622ea0add29e9, type: 3}
-  - {fileID: 320796327898536922, guid: d73f2c7c93474004a96d6c224bcdfe8b, type: 3}
-  LandCritters:
-  - {fileID: 5901269167719230969, guid: 448915c6b916eac489ad00e1f69b6746, type: 3}
-  - {fileID: 6698532659067955822, guid: 92b610c12fe982344b3109fea6ab3b07, type: 3}
-  - {fileID: 2498750282535580132, guid: f41f4d28b0b92584bbe18ff76612424f, type: 3}
-  FishingNet: {fileID: 7913173231081658239}
 --- !u!95 &7913173231081658239
 Animator:
   serializedVersion: 5
@@ -1342,7 +1362,7 @@ PrefabInstance:
     - target: {fileID: 1162527757482353897, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}
       propertyPath: m_Name
-      value: Rod Variant
+      value: FishingPole
       objectReference: {fileID: 0}
     - target: {fileID: 1162527757482353897, guid: db132a57c62fb8142830e91189ab3c1a,
         type: 3}

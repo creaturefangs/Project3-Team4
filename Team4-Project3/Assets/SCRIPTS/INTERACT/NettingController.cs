@@ -18,13 +18,38 @@ public class NettingController : MonoBehaviour
     public List<GameObject> LandCritters;
 
 
-    public Animator FishingNet;
+    public Animator FishingNetAnim;
+    private GameObject fishingNet;
+    private GameObject player;
+    public string fishingNetTag = "FishingNet"; // Adjust the tag for your fishing net object
+    public string playertag = "PLAYER";
+
+    private void Start()
+    {
+        // Get the Animator component attached to the GameObject
+        FishingNetAnim = fishingNet.GetComponent<Animator>();
+
+        fishingNet = GameObject.FindGameObjectWithTag(fishingNetTag);
+
+        if (fishingNet == null)
+        {
+            Debug.LogError("Fishing net object not found. Make sure to tag your fishing net object with the specified tag.");
+        }
+
+        player = GameObject.FindGameObjectWithTag(playertag);
+
+        if (player == null)
+        {
+            Debug.LogError("player object not found. Make sure to tag your player object with the specified tag.");
+        }
+
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            FishingNet.SetBool("netting",true);
+            FishingNetAnim.SetTrigger("Netting");
             NetSource.PlayOneShot(swingSFX);
             TryCatchAnimal();
         }
