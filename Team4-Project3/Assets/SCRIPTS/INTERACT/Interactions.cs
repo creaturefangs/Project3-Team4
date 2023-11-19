@@ -22,11 +22,8 @@ public class Interactions : MonoBehaviour
     private Fishing fishing;
     private PauseManager pause;
     private Inventory inv;
-    private ShopUIManager shopUI;
 
     [HideInInspector] public bool canDig = false;
-
-    private string currentItem;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +34,6 @@ public class Interactions : MonoBehaviour
         pause = GetComponentInParent<PauseManager>();
         inv = GetComponent<Inventory>();
         canInteract = true;
-        shopUI = GetComponent<ShopUIManager>();
     }
 
     // Update is called once per frame
@@ -48,7 +44,6 @@ public class Interactions : MonoBehaviour
         {
             Interact();
         }
-        currentItem = inv.currentItem;
     }
 
     private void CheckForInteract() // Checks whether an interactable is in front of the player (camera).
@@ -65,15 +60,14 @@ public class Interactions : MonoBehaviour
             switch (type)
             {
                 case "fish":
-                    if (currentItem == "Rod Variant") { tooltipText.text = "Press E to begin Mini-Game"; }
-                    else { tooltipText.text = "You need a fishing rod to fish!"; }
+                    tooltipText.text = "Press E to begin Mini-Game";
                     break;
                 case "home":
                     if (inv.currency >= inv.requirement) { tooltipText.text = "Press E to Choose Level"; }
                     else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more fish to leave for the day!"; }
                     break;
                 case "dirt":
-                    if (currentItem == "Shovel Variant") { canDig = true; }
+                    canDig = true;
                     tooltipUI.SetActive(false);
                     break;
                 default:
@@ -94,7 +88,7 @@ public class Interactions : MonoBehaviour
         switch (type)
         {
             case "fish":
-                if (currentItem == "Rod Variant") { fishing.StartMinigame(target); }
+                fishing.StartMinigame(target);
                 break;
             case "home":
                 GameObject levelSelectUI = transform.parent.GetChild(2).gameObject;
@@ -103,10 +97,6 @@ public class Interactions : MonoBehaviour
                     levelSelectUI.SetActive(true);
                     pause.EnterMenu();
                 }
-                break;
-            case "shop":
-                shopUI.ShopOpen();
-                Debug.Log("shop");
                 break;
             case "rod":
                 Debug.Log("rod");

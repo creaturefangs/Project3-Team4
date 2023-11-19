@@ -13,8 +13,8 @@ TagManager:
   - Interact
   - Water
   - UI
-  - landNetting
-  - waterNetting
+  - NettingLand
+  - NettingWater
   - 
   - 
   - 

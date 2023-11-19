@@ -10,9 +10,10 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class Fishing : MonoBehaviour
 {
+    private int maxFish = 10;
     private int currentFish = 0;
+    private LayerMask water;
     public float waterLevel;
-    public float spawnRate = 15f; // In seconds.
 
     [Header("Fish Prefabs")]
     public GameObject commonFish;
@@ -39,7 +40,6 @@ public class Fishing : MonoBehaviour
 
     [Header("Mini-Game")]
     [HideInInspector] public float catchTime = 0f;
-    private float loseTime = 0f;
     private float minigameLength = 10f; // In seconds.
     [HideInInspector] public bool inMinigame = false;
     private GameObject meter;
@@ -60,7 +60,8 @@ public class Fishing : MonoBehaviour
         catchZone = meter.transform.GetChild(1).gameObject;
         timer = meter.transform.parent.GetComponentInChildren<TMP_Text>();
 
-        InvokeRepeating("SpawnFish", 0f, spawnRate);
+        water = LayerMask.NameToLayer("Water");
+        InvokeRepeating("SpawnFish", 0f, 15f);
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -87,9 +88,7 @@ public class Fishing : MonoBehaviour
             {
                 EndMinigame(true);
             }
-            else if (catchTime <= 0) { loseTime += Time.deltaTime; }
-            else if (catchTime > 0) { loseTime -= Time.deltaTime; }
-            if (loseTime >= 5) { EndMinigame(false); }
+            else if (catchTime <= 0) { EndMinigame(false); }
         }
     }
 
@@ -108,8 +107,8 @@ public class Fishing : MonoBehaviour
 
         int chance = Random.Range(1, 101);
         Vector3 playerPos = GameObject.Find("First Person Controller Minimal").transform.position;
-        float xRange = Random.Range(playerPos.x - 15f, playerPos.x + 16f);
-        float zRange = Random.Range(playerPos.z - 15f, playerPos.z + 16f);
+        float xRange = Random.Range(playerPos.x - 20f, playerPos.x + 21f);
+        float zRange = Random.Range(playerPos.z - 20f, playerPos.z + 21f);
         float yRotation = Random.Range(1, 361);
         
         GameObject prefab;
@@ -118,6 +117,22 @@ public class Fishing : MonoBehaviour
         else { prefab = rareFish; }
 
         Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
+    }
+
+    private void ValidPosition(GameObject fish_obj)
+    {
+        Vector3 playerPos = GameObject.Find("First Person Controller Minimal").transform.position;
+        float distance = Vector3.Distance(fish_obj.transform.position, playerPos);
+        bool inWater = fish_obj.GetComponent<FishBehavior>().inWater;
+        // Vector3 terrainHeight;
+        // terrainHeight.y = Terrain.activeTerrain.SampleHeight(fish_obj.transform.position);
+        // RaycastHit hit;
+        while (!inWater) // Physics.Raycast(fish_obj.transform.position, fish_obj.transform.TransformDirection(Vector3.up), out hit, 50f, ~water)
+        {
+            // distance = Vector3.Distance(fish_obj.transform.position, GameObject.Find("First Person Controller Minimal").transform.position);
+            fish_obj.transform.position = new Vector3(Random.Range(playerPos.x - 20f, playerPos.x + 21f), 44f, Random.Range(playerPos.z - 20f, playerPos.z + 21f));
+            inWater = fish_obj.GetComponent<FishBehavior>().inWater;
+        }
     }
 
     public void StartMinigame(GameObject fish_obj) // Call from FishBehavior script on fish.
@@ -156,13 +171,11 @@ public class Fishing : MonoBehaviour
                 break;
         }
         catchTime = 0f; // Resets the catch progress.
-        loseTime = 0f;
     }
 
     private void EndMinigame(bool caught_fish)
     {
         meter.transform.parent.gameObject.SetActive(false);
-        Destroy(fish);
         if (caught_fish) { CatchFish(); }
         inMinigame = false;
         pause.ExitMenu();
@@ -182,6 +195,7 @@ public class Fishing : MonoBehaviour
             if (chance <= 33) { value += Random.Range(1, 3); } // A 33% chance of the fish value being 1-2 fish higher in value.
         }
         inv.UpdateCurrency(value);
+        Destroy(fish);
 
     }
 }

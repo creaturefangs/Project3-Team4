@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioClip defaultAmbience;
-    public AudioMixer audioMixer; 
     private AudioSource track01, track02;
     private bool isPlayingTrack01;
 
@@ -20,7 +19,6 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-        
     }
 
     public void Start()
@@ -28,17 +26,6 @@ public class AudioManager : MonoBehaviour
         track01 = gameObject.AddComponent<AudioSource>();
         track02 = gameObject.AddComponent<AudioSource>();
         isPlayingTrack01 = true;
-
-        // Assign the Audio Mixer to both AudioSources
-        if (audioMixer != null)
-        {
-            track01.outputAudioMixerGroup = audioMixer.FindMatchingGroups("BGM")[0];
-            track02.outputAudioMixerGroup = audioMixer.FindMatchingGroups("BGM")[0];
-        }
-
-        // Set the volume to half (0.5f)
-        track01.volume = 0.5f;
-        track02.volume = 0.5f;
 
         SwapTrack(defaultAmbience);
     }
