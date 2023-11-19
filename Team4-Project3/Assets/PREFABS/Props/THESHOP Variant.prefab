@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Shop
+  type: shop
   onInteract:
     m_PersistentCalls:
       m_Calls: []

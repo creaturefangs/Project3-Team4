@@ -1017,7 +1017,7 @@ PrefabInstance:
     - target: {fileID: 5482770489027838049, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6311359944442313660, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
@@ -1037,7 +1037,7 @@ PrefabInstance:
     - target: {fileID: 6638710409312577911, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
@@ -1047,12 +1047,12 @@ PrefabInstance:
     - target: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7086745762172082726, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7571392193109541020, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
@@ -1122,7 +1122,7 @@ PrefabInstance:
     - target: {fileID: 8135997407021365773, guid: 7f45483e15035ce4fb0449ef8e1fd114,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 595765384961716216, guid: 7f45483e15035ce4fb0449ef8e1fd114, type: 3}
@@ -1192,13 +1192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a1164985638024298b2679412b8069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landLayer:
+  landNetting:
     serializedVersion: 2
     m_Bits: 64
-  waterLayer:
+  waterNetting:
     serializedVersion: 2
     m_Bits: 128
-  catchChance: 0.5
+  catchChance: 0.3
   NettingUI: {fileID: 0}
   failureTXT: {fileID: 0}
   caughtTXT: {fileID: 0}

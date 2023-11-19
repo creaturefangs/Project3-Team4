@@ -5,8 +5,8 @@ using TMPro;
 
 public class NettingController : MonoBehaviour
 {
-    public LayerMask landLayer;
-    public LayerMask waterLayer;
+    public LayerMask landNetting;
+    public LayerMask waterNetting;
     public float catchChance = 0.5f; // Adjust this value to set the catch probability
 
     public GameObject NettingUI;
@@ -22,7 +22,7 @@ public class NettingController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             FishingNet.SetBool("netting",true);
             NetSource.PlayOneShot(swingSFX);
@@ -32,11 +32,11 @@ public class NettingController : MonoBehaviour
 
     public void TryCatchAnimal()
     {
-        if (IsPlayerInWater())
+        if(IsPlayerInWater())
         {
             TryCatchAnimalInWater();
         }
-        else
+        else if (IsPlayerOnLand())
         {
             TryCatchAnimalOnLand();
         }
@@ -45,7 +45,13 @@ public class NettingController : MonoBehaviour
     private bool IsPlayerInWater()
     {
         // Check if the player is colliding with the water layer
-        return Physics.Raycast(transform.position, Vector3.down, 1f, waterLayer);
+        return Physics.Raycast(transform.position, Vector3.down, 1f, waterNetting);
+    }
+
+    private bool IsPlayerOnLand()
+    {
+        // Check if the player is colliding with the water layer
+        return Physics.Raycast(transform.position, Vector3.down, 1f, landNetting);
     }
 
     private void TryCatchAnimalInWater()

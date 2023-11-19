@@ -535,31 +535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHolderFarmer
       objectReference: {fileID: 0}
-    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 185.99878
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 185.99878
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 185.99881
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1343
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110006925005168660, guid: e413ff2dd5953374fb57e77aa91c79cc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 47.465
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1248,6 +1223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: First Person Controller Minimal
       objectReference: {fileID: 0}
+    - target: {fileID: 1521937091291543184, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: m_Name
+      value: Shovel
+      objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1298,6 +1278,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3325939236003102338, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      propertyPath: m_Name
+      value: FishingPole
+      objectReference: {fileID: 0}
     - target: {fileID: 5676914843534294039, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: NettingUI
@@ -1316,7 +1301,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 64560528584441119, guid: 765c8e488d750a444821148e082b298b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2027907396}
   m_SourcePrefab: {fileID: 100100000, guid: 765c8e488d750a444821148e082b298b, type: 3}
 --- !u!1 &773977209 stripped
 GameObject:
@@ -3224,7 +3213,8 @@ PrefabInstance:
       propertyPath: interactshopUI
       value: 
       objectReference: {fileID: 153941327}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4107982703910760934, guid: 6a83b1f983e86b348b8bbc2dd2147395, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3568,6 +3558,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2011266364}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2027907391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 64560528584441119, guid: 765c8e488d750a444821148e082b298b,
+    type: 3}
+  m_PrefabInstance: {fileID: 773977208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027907396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027907391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d31d659d784104bb5de3bd3fd48619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tools:
+  - {fileID: 146572936}
+  - {fileID: 773977209}
+  - {fileID: 901199027}
 --- !u!1 &2036024239
 GameObject:
   m_ObjectHideFlags: 0
