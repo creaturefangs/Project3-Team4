@@ -641,6 +641,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c37e465b54e9c944da149b3ab65227bb, type: 3}
+--- !u!1 &308066113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500118162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &334813619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2056,7 +2062,8 @@ PrefabInstance:
       value: CanvasHolderCasualMaleK
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8919195413371976366, guid: e413ff2dd5953374fb57e77aa91c79cc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -2076,7 +2083,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 528636577}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1163074851}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -2364,6 +2371,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4910679713236375819, guid: d35442ab60c6bfd49b2f113417810e9e,
     type: 3}
   m_PrefabInstance: {fileID: 1932462519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &616088385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450064355}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &620283079
 PrefabInstance:
@@ -3482,7 +3495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 1553389973}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 1439343517}
 --- !u!65 &620283083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5045,6 +5058,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7, type: 3}
+--- !u!1 &771416558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1242375167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &776661867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7082,7 +7101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 528636579}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 1163074851}
 --- !u!65 &1126464019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7104,6 +7123,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.916523, z: 1}
   m_Center: {x: 0, y: 0.81648445, z: 0}
+--- !u!1 &1163074851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 528636577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1213497827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2483451816689174669, guid: 19c0fbd67cfac6e4cbd54b7e92bda8b7,
@@ -7210,7 +7235,8 @@ PrefabInstance:
       value: CanvasHolderDoctor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8919195413371976366, guid: e413ff2dd5953374fb57e77aa91c79cc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -7230,7 +7256,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1242375167}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 771416558}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -7746,6 +7772,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1439343517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751061997936824465, guid: e413ff2dd5953374fb57e77aa91c79cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553389971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1450064355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7830,7 +7862,8 @@ PrefabInstance:
       value: CanvasHolderGrandmaWithKid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8919195413371976366, guid: e413ff2dd5953374fb57e77aa91c79cc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -7854,7 +7887,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1450064355}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 616088385}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -7931,17 +7964,17 @@ PrefabInstance:
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 628.723
+      value: 630.089
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 47.7
+      value: 50.162
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 450.491
+      value: 437.59
       objectReference: {fileID: 0}
     - target: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -7984,7 +8017,8 @@ PrefabInstance:
       value: CanvasHolderPoliceFemaleA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8919195413371976366, guid: e413ff2dd5953374fb57e77aa91c79cc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -8004,7 +8038,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1500118162}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 308066113}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -8263,7 +8297,8 @@ PrefabInstance:
       value: CanvasHolderCasualMaleG
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8919195413371976366, guid: e413ff2dd5953374fb57e77aa91c79cc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6980289796041169041, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -8283,7 +8318,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1553389971}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1439343517}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
@@ -10619,7 +10654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 1242375169}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 771416558}
 --- !u!65 &1809753562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11822,7 +11857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 1450064357}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 616088385}
 --- !u!65 &1922515932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12975,17 +13010,17 @@ PrefabInstance:
     - target: {fileID: 5067755742887398202, guid: f0ac6fb9ada49f24683e3eca20786103,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 532.58307
+      value: 603.20355
       objectReference: {fileID: 0}
     - target: {fileID: 5067755742887398202, guid: f0ac6fb9ada49f24683e3eca20786103,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 532.58307
+      value: 603.20355
       objectReference: {fileID: 0}
     - target: {fileID: 5067755742887398202, guid: f0ac6fb9ada49f24683e3eca20786103,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 532.58307
+      value: 603.20355
       objectReference: {fileID: 0}
     - target: {fileID: 5067755742887398202, guid: f0ac6fb9ada49f24683e3eca20786103,
         type: 3}
@@ -13626,7 +13661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 1500118164}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 308066113}
 --- !u!65 &2142929328
 BoxCollider:
   m_ObjectHideFlags: 0
