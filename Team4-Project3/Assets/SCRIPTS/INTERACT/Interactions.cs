@@ -22,7 +22,6 @@ public class Interactions : MonoBehaviour
     private Fishing fishing;
     private PauseManager pause;
     private Inventory inv;
-    private ShopUIManager shopUI;
 
     [HideInInspector] public bool canDig = false;
 
@@ -37,7 +36,6 @@ public class Interactions : MonoBehaviour
         pause = GetComponentInParent<PauseManager>();
         inv = GetComponent<Inventory>();
         canInteract = true;
-        shopUI = GetComponent<ShopUIManager>();
     }
 
     // Update is called once per frame
@@ -101,12 +99,13 @@ public class Interactions : MonoBehaviour
                 if (inv.currency >= inv.requirement)
                 {
                     levelSelectUI.SetActive(true);
-                    pause.EnterMenu();
+                    pause.EnterMenu(); // Locks cursor, player movement, etc. etc. for going into menus.
                 }
                 break;
             case "shop":
-                shopUI.ShopOpen();
-                Debug.Log("shop");
+                GameObject shopUI = GameObject.Find("MainUI").transform.GetChild(1).gameObject;
+                shopUI.SetActive(true);
+                pause.EnterMenu();
                 break;
             case "rod":
                 Debug.Log("rod");
