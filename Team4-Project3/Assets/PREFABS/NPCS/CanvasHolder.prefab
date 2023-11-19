@@ -228,9 +228,11 @@ MonoBehaviour:
   textComponent: {fileID: 1230527311870604994}
   lines:
   - Hello there, you seem to be new to this so i'll help you out.
-  - <How to use Fishing Rod>
-  - <How to use Shovel>
-  - <How to use Fishing Net>
+  - <How to use Fishing Rod> Equip the Fishing pole, get close to a fish to trigger
+    a mini game to catch the fish!
+  - '<How to use Shovel> Equip the Shovel, and find a dirt pile to start digging.  '
+  - '<How to use Fishing Net> Equip the Fishing Net and find a spot where the net
+    icon is to net there. You can loose a catch if you''re not careful! '
   textSpeed: 0.05
   playerIsNear: 0
   updateCheck: 0
@@ -366,8 +368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 3.6309204, y: 19.27929}
-  m_SizeDelta: {x: -55.884766, y: 297.3429}
+  m_AnchoredPosition: {x: -2.5963135, y: 19.377197}
+  m_SizeDelta: {x: -89.5703, y: 290.1015}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8744172192203230470
 CanvasRenderer:
@@ -399,8 +401,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f5d78955495d4f7439da318142d943de, type: 2}
-  m_sharedMaterial: {fileID: 8985409580264578259, guid: f5d78955495d4f7439da318142d943de,
+  m_fontAsset: {fileID: 11400000, guid: bd41ee4fc223a914181c25466b53467a, type: 2}
+  m_sharedMaterial: {fileID: 1765736833008816793, guid: bd41ee4fc223a914181c25466b53467a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -478,17 +480,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 137.41045
+      value: 185.99878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 137.41045
+      value: 185.99878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 137.41046
+      value: 185.99881
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
@@ -498,12 +500,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1356.3828
+      value: -1343
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 47.465
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e1dca93445483944b5406c76c880623,
         type: 3}
@@ -634,4 +636,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComp: {fileID: 2448773549114533512}
-  Textbox: {fileID: 0}
+  Textbox: {fileID: 7751061997936824465}
