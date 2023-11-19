@@ -13032,7 +13032,6 @@ GameObject:
   - component: {fileID: 2647459405402987123}
   - component: {fileID: 500862397628804315}
   - component: {fileID: 2676770767461353025}
-  - component: {fileID: 5886512184338637439}
   m_Layer: 5
   m_Name: TooltipPanel
   m_TagString: Untagged
@@ -13098,26 +13097,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5886512184338637439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6063919493841112490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc3a5627c2698c43bc3090ff681454e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactL:
-    serializedVersion: 2
-    m_Bits: 8
-  raycastDistance: 5
-  tooltipUI: {fileID: 6063919493841112490}
-  tooltipText: {fileID: 1967264319029056795}
-  canInteract: 1
-  canDig: 0
 --- !u!1 &6186733763936133962
 GameObject:
   m_ObjectHideFlags: 0
@@ -15084,6 +15063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 0
   spawnRate: 15
+  bobPrefab: {fileID: 3441783896514695748, guid: e926f6972f1914643b454697db3f70e0,
+    type: 3}
   commonFish: {fileID: 8144836068457703388, guid: e26f5c768d6f34f42b3622ea0add29e9,
     type: 3}
   uncommonFish: {fileID: 6595664370541840382, guid: d380cc89edcf9db40b0e3db21dd36aa4,
@@ -15100,6 +15081,7 @@ MonoBehaviour:
   speedRare: 0.5
   catchTime: 0
   inMinigame: 0
+  lineCast: 0
 --- !u!114 &3785674396596483781
 MonoBehaviour:
   m_ObjectHideFlags: 0

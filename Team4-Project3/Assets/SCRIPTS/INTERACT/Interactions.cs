@@ -94,7 +94,7 @@ public class Interactions : MonoBehaviour
         switch (type)
         {
             case "fish":
-                if (currentItem == "Rod Variant") { fishing.StartMinigame(target); }
+                if (currentItem == "FishingPole") { fishing.StartMinigame(target); }
                 break;
             case "home":
                 GameObject levelSelectUI = transform.parent.GetChild(2).gameObject;

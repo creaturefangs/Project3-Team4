@@ -76,17 +76,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 01d0dcc37c5e7384485c175e09b8fd33,
         type: 3}
       propertyPath: m_Name
-      value: Mesh_Eel Variant
+      value: Eel
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 01d0dcc37c5e7384485c175e09b8fd33,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8497873447506366092, guid: 01d0dcc37c5e7384485c175e09b8fd33,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96,10 +96,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -2604450546838470703}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01d0dcc37c5e7384485c175e09b8fd33,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7133639540579373647}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01d0dcc37c5e7384485c175e09b8fd33,
         type: 3}
       insertIndex: -1
@@ -132,22 +128,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 39.903446, y: 10.032148, z: 77.38738}
   m_Center: {x: 0.263109, y: 4.516076, z: -4.556361}
---- !u!114 &7133639540579373647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320796327898536922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: fish
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &-2457642775690227025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +142,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: uncommon
   inWater: 0
+  onHook: 0

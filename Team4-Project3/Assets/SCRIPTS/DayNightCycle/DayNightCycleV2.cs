@@ -108,6 +108,7 @@ public class DayNightCycleV2 : MonoBehaviour
 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
+        timeText = GameObject.Find("Clock").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -125,7 +126,7 @@ public class DayNightCycleV2 : MonoBehaviour
 
         if (timeText != null)
         {
-        timeText.text = currentTime.ToString("HH:mm");
+        timeText.text = currentTime.ToString("hh:mm tt");
         }
     }
 

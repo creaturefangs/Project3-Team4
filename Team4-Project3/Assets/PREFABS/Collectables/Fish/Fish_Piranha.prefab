@@ -76,17 +76,17 @@ PrefabInstance:
     - target: {fileID: -2069212420556110313, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_Name
-      value: Piranha Variant
+      value: Fish_Piranha
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -96,10 +96,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9061368617621518674}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6893260237020306818}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       insertIndex: -1
@@ -124,22 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: uncommon
---- !u!114 &6893260237020306818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2229970182624040640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edef4e7b5b36464fae2d999e92abdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: fish
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
+  inWater: 0
+  onHook: 0
 --- !u!65 &8609829594703805741
 BoxCollider:
   m_ObjectHideFlags: 0

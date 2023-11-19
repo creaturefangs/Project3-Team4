@@ -10,11 +10,11 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class Fishing : MonoBehaviour
 {
-    private int currentFish = 0;
     public float waterLevel;
-    public float spawnRate = 15f; // In seconds.
+    public float spawnRate = 10f; // In seconds.
 
-    [Header("Fish Prefabs")]
+    [Header("Prefabs")]
+    public GameObject bobPrefab;
     public GameObject commonFish;
     public GameObject uncommonFish;
     public GameObject rareFish;
@@ -45,10 +45,13 @@ public class Fishing : MonoBehaviour
     private GameObject meter;
     private GameObject catchZone;
     private TMP_Text timer;
+    private GameObject tooltipPanel;
 
     private GameObject activeFish;
     private GameObject fish;
     private string rarity;
+
+    public bool lineCast = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,7 @@ public class Fishing : MonoBehaviour
         meter = transform.GetChild(3).GetChild(0).transform.gameObject;
         catchZone = meter.transform.GetChild(1).gameObject;
         timer = meter.transform.parent.GetComponentInChildren<TMP_Text>();
+        tooltipPanel = transform.GetChild(2).gameObject;
 
         InvokeRepeating("SpawnFish", 0f, spawnRate);
 
@@ -91,6 +95,11 @@ public class Fishing : MonoBehaviour
             else if (catchTime > 0) { loseTime -= Time.deltaTime; }
             if (loseTime >= 5) { EndMinigame(false); }
         }
+        else if (inv.currentItem == "FishingPole" && Input.GetKeyDown(KeyCode.F))
+        {
+            if (!lineCast) { CastLine(); } // Casts fishing line if it's not already out.
+            else { RetrieveLine(); } // Retrieves the line if it's already out.
+        }
     }
 
     public void SpawnFish()
@@ -120,8 +129,32 @@ public class Fishing : MonoBehaviour
         Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
     }
 
+    private void CastLine()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore))
+        {
+            if (Vector3.Distance(GameObject.Find("First Person Controller Minimal").transform.position, hit.point) >= 2f) // Makes sure the cast isn't too close to the player to avoid a bug where the bob will spawn on top of the player (???).
+            {
+                GameObject bob = Instantiate(bobPrefab, hit.point, Quaternion.identity);
+                bob.name = "FishingBob";
+                lineCast = true;
+            }
+        }
+    }
+
+    private void RetrieveLine()
+    {
+        GameObject bob = GameObject.Find("FishingBob");
+        Destroy(bob);
+        lineCast = false;
+    }
+
     public void StartMinigame(GameObject fish_obj) // Call from FishBehavior script on fish.
     {
+        catchTime = 0f; // Resets the catch progress.
+        loseTime = 0f;
+
         inMinigame = true;
         fish = fish_obj;
         // var uiHeight = meter.GetComponent<RectTransform>().sizeDelta.y;
@@ -130,8 +163,8 @@ public class Fishing : MonoBehaviour
         meter.transform.parent.gameObject.SetActive(true);
 
         pause.EnterMenu(); // Freezes player and camera movement.
-        TMP_Text tooltipText = GameObject.Find("TooltipPanel").GetComponentInChildren<TMP_Text>();
-        tooltipText.text = "Hold SPACE to move the needle!";
+        tooltipPanel.GetComponentInChildren<TMP_Text>().text = "Hold SPACE to move the needle!";
+        tooltipPanel.SetActive(true);
 
         if (inv.strongerLine) { minigameLength = 7.5f; } // If the player has the Stronger Line shop upgrade, the time needed to stay in the catch-zone is shorter by 25%.
 
@@ -155,13 +188,13 @@ public class Fishing : MonoBehaviour
                 //rect.sizeDelta = new Vector2(rect.sizeDelta.x, uiHeight * (0.6f + extra));
                 break;
         }
-        catchTime = 0f; // Resets the catch progress.
-        loseTime = 0f;
     }
 
     private void EndMinigame(bool caught_fish)
     {
         meter.transform.parent.gameObject.SetActive(false);
+        tooltipPanel.SetActive(false);
+        RetrieveLine();
         Destroy(fish);
         if (caught_fish) { CatchFish(); }
         inMinigame = false;
