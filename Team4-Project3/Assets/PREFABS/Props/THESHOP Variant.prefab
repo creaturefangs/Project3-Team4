@@ -2507,7 +2507,19 @@ MonoBehaviour:
   type: shop
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8030665712606318346}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: ShopOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &571925523893629852 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8077428297966851160, guid: 2d6b2335b047e1247b5a3a5ac87b9692,

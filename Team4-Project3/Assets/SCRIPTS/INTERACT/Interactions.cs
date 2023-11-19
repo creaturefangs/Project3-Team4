@@ -65,7 +65,7 @@ public class Interactions : MonoBehaviour
             switch (type)
             {
                 case "fish":
-                    if (currentItem == "Rod Variant") { tooltipText.text = "Press E to begin Mini-Game"; }
+                    if (currentItem == "Fishing Pole") { tooltipText.text = "Press E to begin Mini-Game"; }
                     else { tooltipText.text = "You need a fishing rod to fish!"; }
                     break;
                 case "home":
@@ -73,7 +73,7 @@ public class Interactions : MonoBehaviour
                     else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more fish to leave for the day!"; }
                     break;
                 case "dirt":
-                    if (currentItem == "Shovel Variant") { canDig = true; }
+                    if (currentItem == "Shovel") { canDig = true; }
                     tooltipUI.SetActive(false);
                     break;
                 default:

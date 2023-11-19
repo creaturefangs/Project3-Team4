@@ -17,15 +17,15 @@ public class ObjectinHandController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            // Press 'P' key to pick up an object
+            // Press 'E' key to pick up an object
             PickUpObject();
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            // Press 'U' key to put away the object
+            // Press 'Q' key to put away the object
             PutAwayObject();
         }
 
@@ -60,6 +60,7 @@ public class ObjectinHandController : MonoBehaviour
         }
     }
 
+
     void PutAwayObject()
     {
         // Find the active child object in the hand
@@ -67,15 +68,18 @@ public class ObjectinHandController : MonoBehaviour
 
         if (!string.IsNullOrEmpty(objectInHandName))
         {
-            // Put away the object and destroy it
-            Debug.Log("Put away and destroyed " + objectInHandName);
-            Destroy(hand.transform.Find(objectInHandName).gameObject);
+            // Set the object in hand to inactive
+            GameObject objectInHand = hand.transform.Find(objectInHandName).gameObject;
+            objectInHand.SetActive(false);
+
+            Debug.Log("Put away " + objectInHandName);
         }
         else
         {
             Debug.Log("You don't have anything in your hand to put away.");
         }
     }
+
 
     void PullOutObject(int index)
     {

@@ -112,6 +112,9 @@ public class DiggingController : MonoBehaviour
     {
         shovelController.SetBool("Digging", false);
         diggingSource.Stop();
+
+        // Reset the slider value to zero
+        slider.value = 0f;
     }
 }
 
