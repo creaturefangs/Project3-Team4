@@ -88,6 +88,13 @@ public class DiggingController : MonoBehaviour
             // Set the flag to true so the code doesn't run again
             hasRun = true;
         }
+
+        if( slider.value == maxValue && hasRun)
+        {
+
+            // Reset the slider value to zero
+            slider.value = 0f;
+        }
     }
 
     IEnumerator MoveObjectUpAndDown(GameObject obj)
@@ -113,8 +120,6 @@ public class DiggingController : MonoBehaviour
         shovelController.SetBool("Digging", false);
         diggingSource.Stop();
 
-        // Reset the slider value to zero
-        slider.value = 0f;
     }
 }
 

@@ -65,7 +65,7 @@ public class Interactions : MonoBehaviour
             switch (type)
             {
                 case "fish":
-                    if (currentItem == "Fishing Pole") { tooltipText.text = "Press E to begin Mini-Game"; }
+                    if (currentItem == "FishingPole") { tooltipText.text = "Press E to begin Mini-Game"; }
                     else { tooltipText.text = "You need a fishing rod to fish!"; }
                     break;
                 case "home":
