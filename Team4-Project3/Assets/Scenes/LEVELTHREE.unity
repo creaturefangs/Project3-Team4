@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyBoxMaterial: {fileID: 2100000, guid: df52d721fa3eaee48ae1cc260dc1de1f, type: 2}
-  timeMultiplier: 2000
+  timeMultiplier: 100
   startHour: 8
   timeText: {fileID: 0}
   sunLight: {fileID: 1511261161}
