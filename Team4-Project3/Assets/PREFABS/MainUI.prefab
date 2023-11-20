@@ -15269,7 +15269,7 @@ MonoBehaviour:
   valueRare: 5
   speedCommon: 0.15
   speedUncommon: 0.3
-  speedRare: 0.5
+  speedRare: 0.45
   catchTime: 0
   inMinigame: 0
   lineCast: 0

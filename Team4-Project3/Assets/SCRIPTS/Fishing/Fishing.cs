@@ -32,7 +32,7 @@ public class Fishing : MonoBehaviour
     [Header("Mini-Game Speed")]
     public float speedCommon = 0.15f;
     public float speedUncommon = 0.3f;
-    public float speedRare = 0.5f;
+    public float speedRare = 0.45f;
 
     private Inventory inv;
     private PauseManager pause;
@@ -88,6 +88,8 @@ public class Fishing : MonoBehaviour
     {
         if (inMinigame) // While player is in the fishing mini-game.
         {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E)) { EndMinigame(false); }
+
             catchTime = Mathf.Clamp(catchTime, 0f, minigameLength);
             timer.text = (minigameLength - catchTime).ToString("F1"); // "F1" shows only to first decimal place.
             if (catchTime >= minigameLength) // If the player has had the needle in the catch-zone for long enough, they win the mini-game.
@@ -96,7 +98,7 @@ public class Fishing : MonoBehaviour
             }
             else if (catchTime <= 0) { loseTime += Time.deltaTime; }
             else if (catchTime > 0) { loseTime -= Time.deltaTime; }
-            if (loseTime >= 5) { EndMinigame(false); }
+            if (loseTime >= 2.5f) { EndMinigame(false); }
         }
         else if (inv.currentItem == "FishingPole" && Input.GetKeyDown(KeyCode.F))
         {
