@@ -14,6 +14,7 @@ public class Fishing : MonoBehaviour
     public float spawnRate = 10f; // In seconds.
 
     [Header("Prefabs")]
+    public GameObject previewPrefab;
     public GameObject bobPrefab;
     public GameObject commonFish;
     public GameObject uncommonFish;
@@ -52,6 +53,7 @@ public class Fishing : MonoBehaviour
     private string rarity;
 
     public bool lineCast = false;
+    private Vector3 castPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -100,10 +102,14 @@ public class Fishing : MonoBehaviour
             else if (catchTime > 0) { loseTime -= Time.deltaTime; }
             if (loseTime >= 2.5f) { EndMinigame(false); }
         }
-        else if (inv.currentItem == "FishingPole" && Input.GetKeyDown(KeyCode.F))
+        else if (inv.currentItem == "FishingPole")
         {
-            if (!lineCast) { CastLine(); } // Casts fishing line if it's not already out.
-            else { RetrieveLine(); } // Retrieves the line if it's already out.
+            castPosition = CastValid();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (!lineCast) { CastLine(); } // Casts fishing line if it's not already out.
+                else { RetrieveLine(); } // Retrieves the line if it's already out.
+            }
         }
     }
 
@@ -134,17 +140,48 @@ public class Fishing : MonoBehaviour
         Instantiate(prefab, new Vector3(xRange, waterLevel, zRange), Quaternion.Euler(0f, yRotation, 0f), activeFish.transform);
     }
 
-    private void CastLine()
+    private Vector3 CastValid()
     {
+        GameObject extantPreview = GameObject.Find("CastPreview"); // Check if the cast preview already exists.
+        GameObject player = GameObject.Find("First Person Controller Minimal");
+
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore))
         {
-            if (Vector3.Distance(GameObject.Find("First Person Controller Minimal").transform.position, hit.point) >= 2f) // Makes sure the cast isn't too close to the player to avoid a bug where the bob will spawn on top of the player (???).
+            Collider terrain = GameObject.Find("Terrain").GetComponent<TerrainCollider>();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit2;
+            if (terrain.Raycast(ray, out hit2, 50f))
             {
-                GameObject bob = Instantiate(bobPrefab, hit.point, Quaternion.identity);
-                bob.name = "FishingBob";
-                lineCast = true;
+                float waterDistance = Vector3.Distance(hit.transform.position, player.transform.position);
+                float terrainDistance = Vector3.Distance(ray.GetPoint(50), player.transform.position);
+                if (terrainDistance < waterDistance || waterDistance <= 1.8) { return Vector3.zero; } // If the cast is closer than 1.8f it will spawn on top of the player for whatever reason.
             }
+
+            if (!lineCast) // Show a cast preview if the line isn't already cast.
+            {
+                if (extantPreview == null)
+                {
+                    GameObject preview = Instantiate(previewPrefab, hit.point, Quaternion.Euler(90, 0, 0));
+                    preview.name = "CastPreview";
+                }
+                else { extantPreview.transform.position = hit.point; }
+            }
+            else if (extantPreview != null) { Destroy(extantPreview); } // If player is not looking at water, get rid of the cast preview.
+            return hit.point;
+        }
+        // If cast is invalid...
+        if (extantPreview != null) { Destroy(extantPreview); }
+        return Vector3.zero;
+    }
+
+    private void CastLine()
+    {
+        if (castPosition != Vector3.zero)
+        {
+            GameObject bob = Instantiate(bobPrefab, castPosition, Quaternion.identity);
+            bob.name = "FishingBob";
+            lineCast = true;
         }
     }
 
