@@ -74,6 +74,9 @@ public class Fishing : MonoBehaviour
             case "LEVELTWO":
                 waterLevel = 44f;
                 break;
+            case "LEVELTHREE":
+                waterLevel = -0.75f;
+                break;
             default:
                 waterLevel = 44f;
                 break;
