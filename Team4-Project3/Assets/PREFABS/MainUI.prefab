@@ -715,7 +715,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
         m_MethodName: OnLevelTwoClick
         m_Mode: 1
@@ -1396,6 +1396,7 @@ GameObject:
   - component: {fileID: 8814360593690638719}
   - component: {fileID: 3776193064114901589}
   - component: {fileID: 4670603738239197822}
+  - component: {fileID: 1566882801463173382}
   m_Layer: 5
   m_Name: TalkButton
   m_TagString: Untagged
@@ -1505,6 +1506,51 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1566882801463173382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726060036043979987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: ClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &865344900048503226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,7 +3675,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
         m_MethodName: OnLevelTwoClick
         m_Mode: 1
@@ -4233,7 +4279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5581311288944785072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7727,7 +7773,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
         m_MethodName: OnLevelThreeClick
         m_Mode: 1
@@ -10012,6 +10058,7 @@ GameObject:
   - component: {fileID: 7118946150125615575}
   - component: {fileID: 551188570196908056}
   - component: {fileID: 3223517881007421870}
+  - component: {fileID: 3943176930509862691}
   m_Layer: 5
   m_Name: LeaveButton
   m_TagString: Untagged
@@ -10145,6 +10192,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3943176930509862691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254065395850657109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: ClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5283426130004768850
 GameObject:
   m_ObjectHideFlags: 0
@@ -11776,7 +11868,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
         m_MethodName: OnLevelOneClick
         m_Mode: 1
@@ -12900,7 +12992,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
         m_MethodName: OnLevelThreeClick
         m_Mode: 1
@@ -13138,6 +13230,7 @@ GameObject:
   - component: {fileID: 821113281997771384}
   - component: {fileID: 1850213642528733419}
   - component: {fileID: 7761922828767361644}
+  - component: {fileID: 328859075498815379}
   m_Layer: 5
   m_Name: SellButton
   m_TagString: Untagged
@@ -13246,7 +13339,76 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1850213642528733419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5346335209688841367}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2120412065622443912}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &328859075498815379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186733763936133962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: ClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6271467761889246681
 GameObject:
   m_ObjectHideFlags: 0
@@ -14858,9 +15020,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4403055417605258154}
         m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
-        m_MethodName: OnLevelOneClick
+        m_MethodName: OnLevelThreeClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15107,7 +15269,7 @@ MonoBehaviour:
   valueRare: 5
   speedCommon: 0.15
   speedUncommon: 0.3
-  speedRare: 0.5
+  speedRare: 0.45
   catchTime: 0
   inMinigame: 0
   lineCast: 0
@@ -17645,6 +17807,7 @@ GameObject:
   - component: {fileID: 8042885440399019257}
   - component: {fileID: 5095144209667391461}
   - component: {fileID: 5120714678289752065}
+  - component: {fileID: 8970679787315199724}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -17753,7 +17916,76 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5095144209667391461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1316526897992465133}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5346335209688841367}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8970679787315199724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733797353686610067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 741641820851314101}
+          m_TargetAssemblyTypeName: BtnSFX, Assembly-CSharp
+          m_MethodName: ClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8751767989945837636
 GameObject:
   m_ObjectHideFlags: 0
