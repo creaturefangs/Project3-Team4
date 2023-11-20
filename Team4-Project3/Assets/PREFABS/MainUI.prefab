@@ -4841,7 +4841,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Collect items via three minigames- Fishing, Digging, or netting! '
+  m_text: 'Collect items via three minigames:
+
+    Fishing, Digging, or Netting! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd41ee4fc223a914181c25466b53467a, type: 2}
   m_sharedMaterial: {fileID: 1765736833008816793, guid: bd41ee4fc223a914181c25466b53467a,
@@ -4923,7 +4925,7 @@ GameObject:
   - component: {fileID: 8229442170847503051}
   - component: {fileID: 796057326361771812}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ControlsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4976,8 +4978,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A,W,S,D - Movement\nE - Equip Items or Interaction\nQ - Put Away Item
-    \nF - Use Net\nSpace - Mini Game\nShift - Run\nESC - Pause Menu "
+  m_text: 'WASD - Move
+
+    Shift - Run
+
+    Num-keys/Scroll - Switch Items
+
+    E
+    - Interact
+
+    F - Use Net/Cast Line
+
+    Q - Put Away Item
+
+    Space - Fishing
+    Meter
+
+    ESC - Pause Menu'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5d78955495d4f7439da318142d943de, type: 2}
   m_sharedMaterial: {fileID: 8985409580264578259, guid: f5d78955495d4f7439da318142d943de,
@@ -6007,7 +6024,7 @@ GameObject:
   - component: {fileID: 3763882941560801339}
   - component: {fileID: 2335584620508276494}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InstructionsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6063,8 +6080,8 @@ MonoBehaviour:
   m_text: 'Go to the shop to get upgrades and buy items!
 
 
-    After collecting fish,
-    you may go to the next level.'
+    Catch enough fish
+    to go to the next level.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1, type: 2}
   m_sharedMaterial: {fileID: 7634246206194509418, guid: d7f91ffd1d3d18a489cb0b2cdfea7dc1,
@@ -9609,7 +9626,7 @@ GameObject:
   - component: {fileID: 6480133448296154745}
   - component: {fileID: 1837581899658122145}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Heading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
