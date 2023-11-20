@@ -86,8 +86,8 @@ public class AudioManager : MonoBehaviour
             track02.Play();
             while(timeElapsed < timeToFade)
             {
-                track02.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade); //from 0 volume to 1 volume
-                track01.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade); //from 1 volume to 0 volume
+                track02.volume = Mathf.Lerp(0, .5f, timeElapsed / timeToFade); //from 0 volume to 1 volume
+                track01.volume = Mathf.Lerp(.5f, 0, timeElapsed / timeToFade); //from 1 volume to 0 volume
                 timeElapsed += Time.deltaTime;
                 yield return null;
             }
@@ -101,7 +101,7 @@ public class AudioManager : MonoBehaviour
 
             while(timeElapsed < timeToFade)
             {
-                track01.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade); //from 0 volume to 1 volume
+                track01.volume = Mathf.Lerp(0, .5f, timeElapsed / timeToFade); //from 0 volume to 1 volume
                 track02.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade); //from 1 volume to 0 volume
                 timeElapsed += Time.deltaTime;
                 yield return null;
