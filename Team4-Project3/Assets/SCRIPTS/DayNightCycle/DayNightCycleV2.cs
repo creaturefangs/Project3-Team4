@@ -137,6 +137,9 @@ public class DayNightCycleV2 : MonoBehaviour
             day = true;
             night = false;
 
+            sunLight.enabled = true;
+            moonLight.enabled = false;
+
             AudioManager.instance.activateTimeZero();
             AudioManager.instance.SwapTrack(dayTrack);
 
@@ -148,6 +151,9 @@ public class DayNightCycleV2 : MonoBehaviour
         {
             night = true;
             day = false;
+
+            sunLight.enabled = false;
+            moonLight.enabled = true;
 
             AudioManager.instance.activateTimeOne();
             AudioManager.instance.SwapTrack(nightTrack);
