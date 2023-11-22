@@ -164,6 +164,8 @@ public class DayNightCycleV2 : MonoBehaviour
     {
         float sunLightRotation;
 
+        float moonLightRotation;
+
         if (currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime)
         {
             TimeSpan sunriseToSunsetDuration = CalculateTimeDifference(sunriseTime, sunsetTime);
@@ -172,6 +174,10 @@ public class DayNightCycleV2 : MonoBehaviour
             double percentage = timeSinceSunrise.TotalMinutes / sunriseToSunsetDuration.TotalMinutes;
 
             sunLightRotation = Mathf.Lerp(0, 180, (float)percentage);
+            moonLightRotation = Mathf.Lerp(180, 360, (float)percentage);
+
+            //moon direction
+            //RenderSettings.skybox("_MoonDirection", transform.position += Vector3.forward * Time.deltaTime);
         }
         else
         {
@@ -181,9 +187,11 @@ public class DayNightCycleV2 : MonoBehaviour
             double percentage = timeSinceSunset.TotalMinutes / sunsetToSunriseDuration.TotalMinutes;
 
             sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
+            moonLightRotation = Mathf.Lerp(0, 180, (float)percentage);
         }
 
         sunLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
+        moonLight.transform.rotation = Quaternion.AngleAxis(moonLightRotation, Vector3.right);
     }
 
     private void UpdateLightSettings()

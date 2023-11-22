@@ -200,7 +200,7 @@ Material:
     - _MOON: 1
     - _Metallic: 0
     - _MoonHardness: 0.897
-    - _MoonRadius: 0.819
+    - _MoonRadius: 0.45
     - _MoonTextureRotation: 50
     - _OcclusionStrength: 1
     - _Parallax: 0.005
