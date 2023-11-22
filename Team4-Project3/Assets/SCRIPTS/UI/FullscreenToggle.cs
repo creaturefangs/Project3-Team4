@@ -16,10 +16,10 @@ public class FullscreenToggle : MonoBehaviour
     private void Update()
     {
         // Check for a key press or some other event to toggle fullscreen
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            ToggleFullscreen();
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    ToggleFullscreen();
+        //}
     }
 
    public void ToggleFullscreen()
