@@ -46,8 +46,8 @@ public class Inventory : MonoBehaviour
 
     public void UpdateCurrency(int change)
     {
-        Animator animator = GameObject.Find("Currency").GetComponent<Animator>();
-        TMP_Text text = GameObject.Find("Currency").GetComponent<TMP_Text>();
+        Animator animator = GameObject.Find("FishCurrency").GetComponent<Animator>();
+        TMP_Text text = GameObject.Find("FishCurrency").GetComponent<TMP_Text>();
         currency += change;
         text.text = currency.ToString();
         if (change < 0) { animator.Play("LoseCurrency", -1, 0f); } // If you lose fish...
@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
 
     public void SetCurrency(int money)
     {
-        TMP_Text text = GameObject.Find("Currency").GetComponent<TMP_Text>();
+        TMP_Text text = GameObject.Find("FishCurrency").GetComponent<TMP_Text>();
         currency = money;
         text.text = currency.ToString();
         CheckRequirement();

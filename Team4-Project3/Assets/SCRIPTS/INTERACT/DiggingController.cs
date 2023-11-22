@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DiggingController : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class DiggingController : MonoBehaviour
     public AudioSource diggingSource;
     public AudioClip digDone; 
     public Animator shovelController;
+
+    // text
+    public TMP_Text collectedObjectNameText;
+    public GameObject collectObject;
 
     //slider 
     public Slider slider;
@@ -82,6 +87,11 @@ public class DiggingController : MonoBehaviour
             StartCoroutine(MoveObjectUpAndDown(spawnedObject));
             Debug.Log("Instantiated Bug");
 
+            // Display the name of the collected object
+            string objectName = objectsToInstantiate[randomIndex].name;
+            collectedObjectNameText.text = "Collected: " + objectName;
+            collectedObjectNameText.gameObject.SetActive(true);
+
             StopDigging();
             // Bug  spawns and player stops digging.
             diggingSource.PlayOneShot(digDone);
@@ -120,6 +130,13 @@ public class DiggingController : MonoBehaviour
         shovelController.SetBool("Digging", false);
         diggingSource.Stop();
 
+        // Schedule the hide method to be called after a delay (e.g., 3 seconds)
+        Invoke("HideCollectedObjectNameText", 3f);
+    }
+
+    void HideCollectedObjectNameText()
+    {
+        collectedObjectNameText.gameObject.SetActive(false);
     }
 }
 
