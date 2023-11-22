@@ -5,9 +5,9 @@ using UnityEngine;
 using TMPro;
 
 public class DayNightCycleV2 : MonoBehaviour
-{
+{    
     [Header("skybox")]
-    
+
     [SerializeField]
     private Material skyBoxMaterial;
 
@@ -90,7 +90,7 @@ public class DayNightCycleV2 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         RenderSettings.skybox = skyBoxMaterial;
 
         if (startHour > 7 && startHour < 20) //Day
@@ -137,11 +137,10 @@ public class DayNightCycleV2 : MonoBehaviour
             day = true;
             night = false;
 
-            sunLight.enabled = true;
-            moonLight.enabled = false;
-
             AudioManager.instance.activateTimeZero();
             AudioManager.instance.SwapTrack(dayTrack);
+
+            //skyBoxMaterial.shader._SUN;
 
             dayTime = Color.blue;
             //float lerp = Mathf.PingPong(Time.time, duration) / duration;
@@ -151,9 +150,6 @@ public class DayNightCycleV2 : MonoBehaviour
         {
             night = true;
             day = false;
-
-            sunLight.enabled = false;
-            moonLight.enabled = true;
 
             AudioManager.instance.activateTimeOne();
             AudioManager.instance.SwapTrack(nightTrack);
