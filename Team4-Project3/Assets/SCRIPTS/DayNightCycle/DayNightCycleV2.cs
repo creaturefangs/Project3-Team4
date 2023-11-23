@@ -177,7 +177,26 @@ public class DayNightCycleV2 : MonoBehaviour
             moonLightRotation = Mathf.Lerp(180, 360, (float)percentage);
 
             //moon direction
-            //RenderSettings.skybox("_MoonDirection", transform.position += Vector3.forward * Time.deltaTime);
+            //transform.position += Vector3.forward * Time.deltaTime;
+
+            //skyBoxMaterial.SetFloat("_SUN", 1);
+            
+            //Vector3 invWaveLength4 = new Vector3(1.0f / Mathf.Lerp(180, 360, (float)percentage), 1.0f / Mathf.Lerp(180, 360, (float)percentage), 1.0f / Mathf.Lerp(180, 360, (float)percentage));
+		    //float scale = 1.0f / (m_outerRadius - m_innerRadius);
+            
+            //skyBoxMaterial.SetVector("_MoonDirection", invWaveLength4);
+
+            //skyBoxMaterial.SetFloat ("_OutlineWidmth", EndWidth);
+
+            //moon direction
+            //transform.position += Vector3.forward * Time.deltaTime;
+
+            //Vector3 invWaveLength4 = new Vector3(1.0f / Mathf.Lerp(180, 360, (float)percentage), 1.0f / Mathf.Lerp(180, 360, (float)percentage), 1.0f / Mathf.Lerp(180, 360, (float)percentage));
+		    //float scale = 1.0f / (m_outerRadius - m_innerRadius);
+            
+            //skyBoxMaterial.SetVector("_MoonDirection", invWaveLength4);
+
+            //skyBoxMaterial.SetFloat ("_OutlineWidmth", EndWidth);
         }
         else
         {

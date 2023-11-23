@@ -1221,14 +1221,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyBoxMaterial: {fileID: 2100000, guid: 6134fe4694ae79548b83d3e8ff983a21, type: 2}
-  timeMultiplier: 100
+  timeMultiplier: 2000
   startHour: 8
   timeText: {fileID: 752102894}
   sunLight: {fileID: 1127795538}
   sunriseHour: 6
   sunsetHour: 18
   dayAmbientLight: {r: 1, g: 0.93744147, b: 0.740566, a: 0}
-  nightAmbientLight: {r: 0.71628845, g: 0.7122642, b: 1, a: 0}
+  nightAmbientLight: {r: 0.033860292, g: 0.027910262, b: 0.46226418, a: 0}
   lightChangeCurve:
     serializedVersion: 2
     m_Curve:
