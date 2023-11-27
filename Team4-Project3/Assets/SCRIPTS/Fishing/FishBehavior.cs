@@ -76,7 +76,7 @@ public class FishBehavior : MonoBehaviour
             validSpawn = true;
             if (originalPosition == Vector3.zero) { originalPosition = transform.position; originalRotation = transform.rotation; }
         }
-        if (other.gameObject.name == "FishingBob")
+        if (other.gameObject.name == "Bob")
         {
             onHook = true; fishing.StartMinigame(gameObject); // Starts the mini-game if close enough to the hook and the player presses E.
         }

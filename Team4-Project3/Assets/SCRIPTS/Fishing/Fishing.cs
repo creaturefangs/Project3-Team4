@@ -51,9 +51,11 @@ public class Fishing : MonoBehaviour
     private GameObject activeFish;
     private GameObject fish;
     private string rarity;
+    private int fishValue;
 
     public bool lineCast = false;
     private Vector3 castPosition;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +67,8 @@ public class Fishing : MonoBehaviour
         catchZone = meter.transform.GetChild(1).gameObject;
         timer = meter.transform.parent.GetComponentInChildren<TMP_Text>();
         tooltipPanel = transform.GetChild(2).gameObject;
+
+        player = GameObject.Find("First Person Controller Minimal");
 
         InvokeRepeating("SpawnFish", 0f, spawnRate);
 
@@ -104,7 +108,7 @@ public class Fishing : MonoBehaviour
         }
         else if (inv.currentItem == "FishingPole")
         {
-            castPosition = CastValid();
+            if (!lineCast) { castPosition = CastValid(); }
             if (Input.GetKeyDown(KeyCode.F))
             {
                 if (!lineCast) { CastLine(); } // Casts fishing line if it's not already out.
@@ -142,37 +146,45 @@ public class Fishing : MonoBehaviour
 
     private Vector3 CastValid()
     {
-        GameObject extantPreview = GameObject.Find("CastPreview"); // Check if the cast preview already exists.
-        GameObject player = GameObject.Find("First Person Controller Minimal");
+        GameObject preview = GameObject.Find("CastPreview"); // Check if the cast preview already exists.
+        bool valid = false;
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 30f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore)) // Check if looking at water.
         {
-            Collider terrain = GameObject.Find("Terrain").GetComponent<TerrainCollider>();
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit2;
-            if (terrain.Raycast(ray, out hit2, 50f))
+            float waterDistance = Vector3.Distance(hit.transform.position, player.transform.position);
+            if (waterDistance > 0) // When raycast bugs out and hits the player collider, it registers as a distance of zero, so this evades that.
             {
-                float waterDistance = Vector3.Distance(hit.transform.position, player.transform.position);
-                float terrainDistance = Vector3.Distance(ray.GetPoint(50), player.transform.position);
-                if (terrainDistance < waterDistance || waterDistance <= 1.8) { return Vector3.zero; } // If the cast is closer than 1.8f it will spawn on top of the player for whatever reason.
-            }
-
-            if (!lineCast) // Show a cast preview if the line isn't already cast.
-            {
-                if (extantPreview == null)
+                if (preview == null) // If preview does not already exist...
                 {
-                    GameObject preview = Instantiate(previewPrefab, hit.point, Quaternion.Euler(90, 0, 0));
+                    preview = Instantiate(previewPrefab, hit.point, Quaternion.Euler(90, 0, 0));
                     preview.name = "CastPreview";
                 }
-                else { extantPreview.transform.position = hit.point; }
+                else { preview.transform.position = hit.point; }
+
+                Collider terrain = GameObject.Find("Terrain").GetComponent<TerrainCollider>();
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (terrain.Raycast(ray, out RaycastHit _, 50f)) // Check if terrain in front of player.
+                {
+                    float terrainDistance = Vector3.Distance(ray.GetPoint(50), player.transform.position);
+                    if (terrainDistance > waterDistance) { valid = true; } // If the water is closer to the player (above the terrain), then the player can cast.
+                    else { Debug.Log($"Terrain in front of water. Distance: {terrainDistance}, water distance: {waterDistance}."); }
+                }
+                else { valid = true; }
             }
-            else if (extantPreview != null) { Destroy(extantPreview); } // If player is not looking at water, get rid of the cast preview.
+            else if (preview != null) { Destroy(preview); }
+        }
+        if (valid)
+        {
+            preview.GetComponent<TMP_Text>().color = new Color32(30, 255, 25, 255);
             return hit.point;
         }
-        // If cast is invalid...
-        if (extantPreview != null) { Destroy(extantPreview); }
-        return Vector3.zero;
+        else
+        {
+            // if (preview != null) { Destroy(preview); }
+            if (preview != null) { preview.GetComponent<TMP_Text>().color = Color.red; }
+            return Vector3.zero;
+        }
     }
 
     private void CastLine()
@@ -182,6 +194,9 @@ public class Fishing : MonoBehaviour
             GameObject bob = Instantiate(bobPrefab, castPosition, Quaternion.identity);
             bob.name = "FishingBob";
             lineCast = true;
+            TMP_Text preview = GameObject.Find("CastPreview").GetComponent<TMP_Text>();
+            preview.color = Color.white;
+            GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>().TogglePlayerFreeze(false);
         }
     }
 
@@ -190,6 +205,7 @@ public class Fishing : MonoBehaviour
         GameObject bob = GameObject.Find("FishingBob");
         Destroy(bob);
         lineCast = false;
+        GameObject.Find("First Person Controller Minimal").GetComponent<FirstPersonMovement>().TogglePlayerFreeze(true);
     }
 
     public void StartMinigame(GameObject fish_obj) // Call from FishBehavior script on fish.
@@ -239,8 +255,8 @@ public class Fishing : MonoBehaviour
         RetrieveLine();
         Destroy(fish);
         if (caught_fish) { CatchFish(); }
+        else { pause.ExitMenu(); }
         inMinigame = false;
-        pause.ExitMenu();
     }
 
     private void CatchFish()
@@ -257,6 +273,21 @@ public class Fishing : MonoBehaviour
             if (chance <= 33) { value += Random.Range(1, 3); } // A 33% chance of the fish value being 1-2 fish higher in value.
         }
         inv.UpdateCurrency(value);
+        fishValue = value;
+        StartCoroutine(CatchResults());
+    }
 
+    private IEnumerator CatchResults()
+    {
+        int childCount = GameObject.Find("MainUI").transform.GetChild(0).childCount;
+        GameObject panel = GameObject.Find("MainUI").transform.GetChild(0).GetChild(childCount-2).gameObject;
+        pause.EnterMenu();
+        panel.SetActive(true);
+        panel.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>().text = $"{fish.name.Split("(")[0].ToUpper()}!";
+        panel.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = $"rarity: {rarity.ToUpper()}";
+        panel.transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>().text = $"value: {fishValue} COINS";
+        yield return new WaitForSeconds(5);
+        panel.SetActive(false);
+        pause.ExitMenu();
     }
 }
