@@ -115,6 +115,11 @@ public class Fishing : MonoBehaviour
                 else { RetrieveLine(); } // Retrieves the line if it's already out.
             }
         }
+        if (inv.currentItem != "FishingPole")
+        {
+            GameObject preview = GameObject.Find("CastPreview");
+            if (preview != null) { Destroy(preview); }
+        }
     }
 
     public void SpawnFish()
@@ -150,7 +155,7 @@ public class Fishing : MonoBehaviour
         bool valid = false;
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 30f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore)) // Check if looking at water.
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 40f, ~LayerMask.NameToLayer("Water"), QueryTriggerInteraction.Ignore)) // Check if looking at water.
         {
             float waterDistance = Vector3.Distance(hit.transform.position, player.transform.position);
             if (waterDistance > 0) // When raycast bugs out and hits the player collider, it registers as a distance of zero, so this evades that.

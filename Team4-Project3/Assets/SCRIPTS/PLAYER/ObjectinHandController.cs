@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectinHandController : MonoBehaviour
 {
     private GameObject hand;
     public List<GameObject> tools = new List<GameObject>();
-
-
+    private GameObject toolPanel;
 
     void Start()
     {
         // Assuming your hand GameObject is named "ObjectInHand"
         hand = GameObject.Find("ObjectInHand");
+        toolPanel = GameObject.Find("ToolPanel");
     }
 
     void Update()
@@ -92,34 +93,16 @@ public class ObjectinHandController : MonoBehaviour
         }
     }
 
-
-    void PullOutObject(int index)
-    {
-        // Check if the index is within the range of the tools list
-        if (index >= 0 && index < tools.Count)
-        {
-            // Instantiate and activate the specified tool in the hand
-            GameObject toolPrefab = tools[index];
-            GameObject spawnedTool = Instantiate(toolPrefab, hand.transform);
-            spawnedTool.SetActive(true);
-
-            Debug.Log("Pulled out " + toolPrefab.name);
-        }
-        else
-        {
-            Debug.Log("Invalid tool index: " + index);
-        }
-    }
-
     private void SwitchItem(int index)
     {
-        if (index >= 0 && index < hand.transform.childCount)
+        if (index >= 0 && index < hand.transform.childCount) // If it's a valid, existing tool...
         {
             for (var i = 0; i < hand.transform.childCount; i++)
             {
-                if (i == index) { hand.transform.GetChild(i).gameObject.SetActive(true); }
-                else { hand.transform.GetChild(i).gameObject.SetActive(false); }
+                if (i == index) { hand.transform.GetChild(i).gameObject.SetActive(true); } // If the current child is the tool about to be switched to, set active.
+                else { hand.transform.GetChild(i).gameObject.SetActive(false); } // If it isn't the switched tool, set it as inactive.
             }
+            HighlightIcon(index);
 
         }
         else if (tools[index]) // If it's a valid tool but not yet instantiated...
@@ -157,6 +140,16 @@ public class ObjectinHandController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void HighlightIcon(int icon)
+    {
+        for (var i = 0; i < toolPanel.transform.childCount; i++)
+        {
+            Image bg = toolPanel.transform.GetChild(i).GetChild(0).GetComponent<Image>();
+            if (i == icon) { bg.color = new Color32(95, 255, 65, 255); }
+            else { bg.color = new Color32(218, 196, 153, 255); }
+        }
     }
 }
 

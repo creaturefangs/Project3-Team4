@@ -10,16 +10,15 @@ public class Inventory : MonoBehaviour
     public int requirement;
 
     public string currentItem;
-    public List<string> items;
 
     public bool bountifulHarvest = false;
     public bool fishWhisperer = false;
+    public bool looseDirt = false;
     public bool strongerLine = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Upgrades();
         switch (SceneManager.GetActiveScene().name)
         {
             // Change values later with play-testing.
@@ -67,9 +66,24 @@ public class Inventory : MonoBehaviour
         if ((currency - cost) < 0) { } // Put player feedback here!
         else
         {
-            items.Add(item);
             UpdateCurrency(-cost);
-            Upgrades(); // Makes sure the newly purchased upgrade is activated.
+            switch (item)
+            {
+                case "BountifulHarvest": // There is a chance that caught fish will be worth 1-2 more fish.
+                    bountifulHarvest = true;
+                    break;
+                case "FishWhisperer": // Better chances of uncommon and rare fish spawning.
+                    fishWhisperer = true;
+                    break;
+                case "LooseDirt": // Less time spent digging.
+                    looseDirt = true;
+                    break;
+                case "StrongerLine": // The fishing mini-game is shorter.
+                    strongerLine = true;
+                    break;
+                default:
+                    break;
+            }
         }
         CheckRequirement();
     }
@@ -90,41 +104,5 @@ public class Inventory : MonoBehaviour
             if (child.gameObject.activeSelf) { return child.name; }
         }
         return null;
-    }
-
-    private void Upgrades() // Iterate through player's upgrades and activate them if not already active.
-    {
-        foreach (string item in items)
-        {
-            switch (item)
-            {
-                case "Bountiful Harvest": // There is a chance that caught fish will be worth 1-2 more fish.
-                    if (!bountifulHarvest)
-                    {
-                        bountifulHarvest = true;
-                        Sprite icon = GameObject.Find("BountifulHarvest_Icon").GetComponent<Sprite>();
-                        // icon = Resources.Load<Sprite>("/UI/BountifulHarvest_Icon");
-                    }
-                    break;
-                case "Fish Whisperer": // Better chances of uncommon and rare fish spawning.
-                    if (!fishWhisperer)
-                    {
-                        fishWhisperer = true;
-                        Sprite icon = GameObject.Find("FishWhisperer_Icon").GetComponent<Sprite>();
-                        // icon = Resources.Load<Sprite>("/UI/FishWhisperer_Icon");
-                    }
-                    break;
-                case "Stronger Line": // The fishing mini-game is shorter.
-                    if (!strongerLine)
-                    {
-                        strongerLine = true;
-                        Sprite icon = GameObject.Find("StrongerRod_Icon").GetComponent<Sprite>();
-                        // icon = Resources.Load<Sprite>("/UI/StrongerRod_Icon");
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }
