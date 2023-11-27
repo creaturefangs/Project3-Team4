@@ -108,7 +108,7 @@ public class DayNightCycleV2 : MonoBehaviour
 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
-        timeText = GameObject.Find("Clock").GetComponent<TextMeshProUGUI>();
+        timeText = GameObject.Find("ClockText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
