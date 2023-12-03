@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6980289796041169041}
   m_Layer: 0
-  m_Name: CanvasHolder
+  m_Name: FarmerNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

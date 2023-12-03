@@ -11,32 +11,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.26637
+      value: 0.15335986
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.26637
+      value: 0.15335986
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26637
+      value: 0.15335986
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 623.03033
+      value: 8.061372
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45
+      value: 1.5093
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 471.94156
+      value: 7.870511
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
       propertyPath: m_Name
-      value: Fish_Piranha
+      value: Piranha
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae39b9475c450dd4ea55e13e4981790f,
         type: 3}
@@ -120,8 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: uncommon
-  inWater: 0
-  onHook: 0
 --- !u!65 &8609829594703805741
 BoxCollider:
   m_ObjectHideFlags: 0
