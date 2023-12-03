@@ -1498,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 444.8
+      value: 434.91
       objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
@@ -1508,12 +1508,12 @@ PrefabInstance:
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 531.9
+      value: 533.25
       objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.20480393
+      value: 0.43770337
       objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
@@ -1523,7 +1523,7 @@ PrefabInstance:
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97880304
+      value: -0.89911944
       objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
@@ -1538,16 +1538,11 @@ PrefabInstance:
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 156.364
+      value: -128.085
       objectReference: {fileID: 0}
     - target: {fileID: 2519825827468645376, guid: 765c8e488d750a444821148e082b298b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325939236003102338, guid: 765c8e488d750a444821148e082b298b,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8600567847689762029, guid: 765c8e488d750a444821148e082b298b,
