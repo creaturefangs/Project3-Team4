@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
@@ -18,6 +19,8 @@ public class FishBehavior : MonoBehaviour
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+
+    bool alertActivated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,8 +54,10 @@ public class FishBehavior : MonoBehaviour
         float distance = Vector3.Distance(transform.position, hook.transform.position);
         if (distance < 15f) // Fish will rotate to look at the hook if it's near it.
         {
+
             var target = Quaternion.LookRotation(hook.transform.position - transform.position);
             transform.rotation = Quaternion.Lerp(transform.rotation, target, speed);
+            if (!alertActivated) { StartCoroutine(Alert()); }
         }
 
         if (distance < 10f) // Fish will move towards the hook if it's even closer.
@@ -66,6 +71,7 @@ public class FishBehavior : MonoBehaviour
         var target = Quaternion.LookRotation(originalPosition - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, target, speed / 3);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, originalPosition, Time.deltaTime * (speed / 3));
+        alertActivated = false;
     }
 
     private void OnTriggerEnter(Collider other) // Make sure either the fish or the other game object have a RigidBody!
@@ -88,5 +94,15 @@ public class FishBehavior : MonoBehaviour
         {
             inWater = false;
         }
+    }
+
+    private IEnumerator Alert()
+    {
+        alertActivated = true;
+        GameObject prefab = Resources.Load<GameObject>("PREFABS/FishExclamation");
+        GameObject alert = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        alert.transform.LookAt(Camera.main.transform);
+        yield return new WaitForSeconds(3);
+        Destroy(alert);
     }
 }
