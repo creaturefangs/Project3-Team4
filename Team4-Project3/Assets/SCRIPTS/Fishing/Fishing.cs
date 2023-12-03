@@ -14,8 +14,6 @@ public class Fishing : MonoBehaviour
     public float spawnRate = 10f; // In seconds.
 
     [Header("Prefabs")]
-    public GameObject previewPrefab;
-    public GameObject bobPrefab;
     public GameObject commonFish;
     public GameObject uncommonFish;
     public GameObject rareFish;
@@ -102,8 +100,8 @@ public class Fishing : MonoBehaviour
             {
                 EndMinigame(true);
             }
-            else if (catchTime <= 0) { loseTime += Time.deltaTime; }
-            else if (catchTime > 0) { loseTime -= Time.deltaTime; }
+            else if (catchTime <= 0) { loseTime += Time.deltaTime; } // Time until player loses mini-game goes up when time in catch zone is zeroed.
+            else if (catchTime > 0) { loseTime -= Time.deltaTime; } // Time until player loses mini-game goes down when in catch zone.
             if (loseTime >= 2.5f) { EndMinigame(false); }
         }
         else if (inv.currentItem == "FishingPole")
@@ -162,7 +160,8 @@ public class Fishing : MonoBehaviour
             {
                 if (preview == null) // If preview does not already exist...
                 {
-                    preview = Instantiate(previewPrefab, hit.point, Quaternion.Euler(90, 0, 0));
+                    GameObject prefab = Resources.Load<GameObject>("PREFABS/CastPreview");
+                    preview = Instantiate(prefab, hit.point, Quaternion.Euler(90, 0, 0));
                     preview.name = "CastPreview";
                 }
                 else { preview.transform.position = hit.point; }
@@ -196,7 +195,8 @@ public class Fishing : MonoBehaviour
     {
         if (castPosition != Vector3.zero)
         {
-            GameObject bob = Instantiate(bobPrefab, castPosition, Quaternion.identity);
+            GameObject prefab = Resources.Load<GameObject>("PREFABS/Objects/FishingBob");
+            GameObject bob = Instantiate(prefab, castPosition, Quaternion.identity);
             bob.name = "FishingBob";
             lineCast = true;
             TMP_Text preview = GameObject.Find("CastPreview").GetComponent<TMP_Text>();

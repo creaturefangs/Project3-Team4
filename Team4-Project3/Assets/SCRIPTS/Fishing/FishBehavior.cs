@@ -82,7 +82,7 @@ public class FishBehavior : MonoBehaviour
             validSpawn = true;
             if (originalPosition == Vector3.zero) { originalPosition = transform.position; originalRotation = transform.rotation; }
         }
-        if (other.gameObject.name == "Bob")
+        if (other.gameObject.name == "Bob" && !fishing.inMinigame)
         {
             onHook = true; fishing.StartMinigame(gameObject); // Starts the mini-game if close enough to the hook and the player presses E.
         }
@@ -96,7 +96,7 @@ public class FishBehavior : MonoBehaviour
         }
     }
 
-    private IEnumerator Alert()
+    private IEnumerator Alert() // Instantiates an exclamation icon above the fish's head when the hook is noticed.
     {
         alertActivated = true;
         GameObject prefab = Resources.Load<GameObject>("PREFABS/FishExclamation");
