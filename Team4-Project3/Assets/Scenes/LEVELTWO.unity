@@ -356,6 +356,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 105323540}
+    - targetCorrespondingSourceObject: {fileID: 717586964194353707, guid: 0362a597bc2e6e24580748d975a97261,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 105323543}
   m_SourcePrefab: {fileID: 100100000, guid: 0362a597bc2e6e24580748d975a97261, type: 3}
 --- !u!4 &105323538 stripped
 Transform:
@@ -390,6 +394,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 81.399734, y: 77.16383, z: 58.51313}
   m_Center: {x: -2.672735, y: 13.585546, z: -0.22632049}
+--- !u!1 &105323541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3083541533199024236, guid: 0362a597bc2e6e24580748d975a97261,
+    type: 3}
+  m_PrefabInstance: {fileID: 105323537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &105323542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 850969024086061914, guid: 0362a597bc2e6e24580748d975a97261,
+    type: 3}
+  m_PrefabInstance: {fileID: 105323537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105323541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db92abe94c52c6f41b4c5e6ab4593b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105323543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105323539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d1cd12dce927c408d0f1e665ba9518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueComp: {fileID: 105323542}
+  Textbox: {fileID: 105323541}
 --- !u!4 &128079262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4851154651662967127, guid: b4f9e27016123374b9fb6ee9c71c4f3f,
@@ -3872,17 +3908,17 @@ PrefabInstance:
     - target: {fileID: 2448773549114533512, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2448773549114533512, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: lines.Array.data[0]
-      value: Hello have you seen a male name waldo?
+      value: Good day for fishing...
       objectReference: {fileID: 0}
     - target: {fileID: 2448773549114533512, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: lines.Array.data[1]
-      value: Hmm ok we have been looking for him but can't seem to find him.
+      value: He is wanted for multiple crimes...
       objectReference: {fileID: 0}
     - target: {fileID: 4398821589100126189, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
@@ -4138,7 +4174,7 @@ PrefabInstance:
     - target: {fileID: 2448773549114533512, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
       propertyPath: lines.Array.data[0]
-      value: Have you seen a goose around here?
+      value: f
       objectReference: {fileID: 0}
     - target: {fileID: 2448773549114533512, guid: e413ff2dd5953374fb57e77aa91c79cc,
         type: 3}
