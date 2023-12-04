@@ -69,7 +69,7 @@ public class FishBehavior : MonoBehaviour
     private void LoseInterest()
     {
         var target = Quaternion.LookRotation(originalPosition - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, target, speed / 3);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target, speed / 6);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, originalPosition, Time.deltaTime * (speed / 3));
         alertActivated = false;
     }

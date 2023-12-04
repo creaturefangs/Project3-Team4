@@ -68,7 +68,7 @@ public class Interactions : MonoBehaviour
                     break;
                 case "home":
                     if (inv.currency >= inv.requirement) { tooltipText.text = "Press E to Choose Level"; }
-                    else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more fish to leave for the day!"; }
+                    else { tooltipText.text = $"You need at least {inv.requirement - inv.currency} more coins to leave for the day!"; }
                     break;
                 case "dirt":
                     if (currentItem == "Shovel") { canDig = true; }

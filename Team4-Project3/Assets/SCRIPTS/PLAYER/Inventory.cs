@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     public int currency = 0;
+    private int fish = 0;
+    private int bugs = 0;
     public int requirement;
 
     public string currentItem;
@@ -43,19 +45,44 @@ public class Inventory : MonoBehaviour
         currentItem = CurrentItem();
     }
 
-    public void UpdateCurrency(int change)
+    public void UpdateCurrency(string type, int change)
     {
-        Animator animator = GameObject.Find("FishCurrency").GetComponent<Animator>();
-        TMP_Text text = GameObject.Find("FishCurrency").GetComponent<TMP_Text>();
-        currency += change;
-        text.text = currency.ToString();
-        if (change < 0) { animator.Play("LoseCurrency", -1, 0f); } // If you lose fish...
-        else if (change > 0) { animator.Play("GainCurrency", -1, 0f); } // If you gain fish...
+        GameObject obj;
+        int amt;
+        switch (type)
+        {
+            case "bugs":
+                obj = GameObject.Find("BugCurrency");
+                bugs += change;
+                amt = bugs;
+                break;
+            case "coins":
+                obj = GameObject.Find("CoinCurrency");
+                currency += change;
+                amt = currency;
+                break;
+            case "fish":
+                obj = GameObject.Find("FishCurrency");
+                fish += change;
+                amt = fish;
+                break;
+            default:
+                obj = GameObject.Find("CoinCurrency");
+                currency += change;
+                amt = currency;
+                break;
+        }
+        Animator animator = obj.GetComponent<Animator>();
+        TMP_Text text = obj.GetComponent<TMP_Text>();
+        
+        text.text = amt.ToString();
+        if (change < 0) { animator.Play("LoseCurrency", -1, 0f); } // If you lose some of the currency...
+        else if (change > 0) { animator.Play("GainCurrency", -1, 0f); } // If you gain some of the currency...
     }
 
     public void SetCurrency(int money)
     {
-        TMP_Text text = GameObject.Find("FishCurrency").GetComponent<TMP_Text>();
+        TMP_Text text = GameObject.Find("CoinCurrency").GetComponent<TMP_Text>();
         currency = money;
         text.text = currency.ToString();
         CheckRequirement();
@@ -66,7 +93,7 @@ public class Inventory : MonoBehaviour
         if ((currency - cost) < 0) { } // Put player feedback here!
         else
         {
-            UpdateCurrency(-cost);
+            UpdateCurrency("coins", -cost);
             switch (item)
             {
                 case "BountifulHarvest": // There is a chance that caught fish will be worth 1-2 more fish.

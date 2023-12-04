@@ -46,9 +46,12 @@ public class PopUpController : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if ((inv.currency - currentValue) >= 0)
+        {
+            popupUI.SetActive(false);
+            Destroy(gameObject);
+        }
         inv.BuyItem(currentValue, name);
-        popupUI.SetActive(false);
-        Destroy(gameObject);
     }
 
     private void SetItemText()

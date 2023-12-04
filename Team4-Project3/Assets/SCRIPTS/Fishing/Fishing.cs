@@ -195,6 +195,8 @@ public class Fishing : MonoBehaviour
     {
         if (castPosition != Vector3.zero)
         {
+            Animator animator = GameObject.Find("FishingPole").GetComponent<Animator>();
+            animator.Play("FishingPole_Cast", -1, 0f);
             GameObject prefab = Resources.Load<GameObject>("PREFABS/Objects/FishingBob");
             GameObject bob = Instantiate(prefab, castPosition, Quaternion.identity);
             bob.name = "FishingBob";
@@ -277,7 +279,8 @@ public class Fishing : MonoBehaviour
             int chance = Random.Range(1, 101);
             if (chance <= 33) { value += Random.Range(1, 3); } // A 33% chance of the fish value being 1-2 fish higher in value.
         }
-        inv.UpdateCurrency(value);
+        inv.UpdateCurrency("fish", 1);
+        inv.UpdateCurrency("coins", value);
         fishValue = value;
         StartCoroutine(CatchResults());
     }
