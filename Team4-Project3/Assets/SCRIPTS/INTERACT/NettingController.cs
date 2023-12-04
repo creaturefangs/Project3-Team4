@@ -135,8 +135,11 @@ public class NettingController : MonoBehaviour
             // Choose a random index
             int randomIndex = Random.Range(0, WaterCritters.Count);
 
+            Vector3 spawnPosition = player.transform.position + player.transform.forward * 2f;
+
             // Instantiate the object at the player's position (you may adjust the position as needed)
-            Instantiate(WaterCritters[randomIndex], transform.position, Quaternion.identity);
+
+            Instantiate(WaterCritters[randomIndex], spawnPosition, Quaternion.identity);
         }
         else
         {
@@ -149,11 +152,13 @@ public class NettingController : MonoBehaviour
         // Check if the list is not empty
         if (LandCritters.Count > 0)
         {
-            // Choose a random index
-            int randomIndex = Random.Range(0, WaterCritters.Count);
+            int randomIndex = Random.Range(0, LandCritters.Count);
 
-            // Instantiate the object at the player's position (you may adjust the position as needed)
-            Instantiate(LandCritters[randomIndex], transform.position, Quaternion.identity);
+            // Instantiate the object in front of the player
+            Vector3 spawnPosition = player.transform.position + player.transform.forward * 2f + Vector3.up * 2f;
+
+            Instantiate(LandCritters[randomIndex], spawnPosition, Quaternion.identity);
+
         }
         else
         {
