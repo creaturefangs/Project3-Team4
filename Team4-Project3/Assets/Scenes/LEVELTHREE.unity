@@ -2236,8 +2236,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019384690}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 179.147}
---- !u!65 &964816761
-BoxCollider:
+--- !u!64 &964816761
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2254,9 +2254,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.16552909, y: 0.085230485, z: 0.041171532}
-  m_Center: {x: 0.005888316, y: 0.0042687627, z: -0.010536579}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5510776075777179962, guid: 2290eb408e3071d428597ce36af3adc0, type: 3}
 --- !u!1001 &1025905948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4407,8 +4408,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019384690}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!65 &1669916728
-BoxCollider:
+--- !u!64 &1669916728
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4425,9 +4426,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1655291, y: 0.0852305, z: 0.041171532}
-  m_Center: {x: 0.005888317, y: 0.004269002, z: -0.010536572}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5510776075777179962, guid: 2290eb408e3071d428597ce36af3adc0, type: 3}
 --- !u!114 &1841479984 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9000042881055990952, guid: 765c8e488d750a444821148e082b298b,
