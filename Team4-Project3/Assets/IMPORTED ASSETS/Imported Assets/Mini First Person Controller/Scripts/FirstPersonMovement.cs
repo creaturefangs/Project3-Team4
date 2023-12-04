@@ -16,16 +16,19 @@ public class FirstPersonMovement : MonoBehaviour
     /// <summary> Functions to override movement speed. Will use the last added override. </summary>
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
 
-
+    private Inventory inv;
 
     void Awake()
     {
         // Get the rigidbody on this.
         rigidbody = GetComponent<Rigidbody>();
+        inv = GameObject.Find("MainUI").GetComponentInChildren<Inventory>();
     }
 
     void FixedUpdate()
     {
+        if (inv.secondWind) { runSpeed = 12; }
+
         // Update IsRunning from input.
         IsRunning = canRun && Input.GetKey(runningKey);
 

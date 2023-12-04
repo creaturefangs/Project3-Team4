@@ -27,11 +27,13 @@ public class DiggingController : MonoBehaviour
     private bool isEKeyDown = false;
     private bool hasRun = false; // Flag to track if the code has run
 
+    private Inventory inv;
     private Interactions interactions;
 
     void Start()
     {
         interactions = GameObject.Find("MainUI").GetComponentInChildren<Interactions>();
+        inv = GameObject.Find("MainUI").GetComponentInChildren<Inventory>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class DiggingController : MonoBehaviour
     {
         // Check if the "E" key is being held down
         isEKeyDown = Input.GetKey(KeyCode.E);
+
+        if (inv.looseDirt) { maxValue = 10; }
 
         if (interactions.canDig)
         {

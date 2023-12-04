@@ -23,13 +23,15 @@ public class NettingController : MonoBehaviour
     public string fishingNetTag = "FishingNet"; // Adjust the tag for your fishing net object
     public string playertag = "PLAYER";
 
+    private Inventory inv;
+
     private void Start()
     {
         // Get the Animator component attached to the GameObject
         FishingNetAnim = GetComponent<Animator>();
 
        
-
+        inv = GameObject.Find("MainUI").GetComponentInChildren<Inventory>();
         player = GameObject.FindGameObjectWithTag(playertag);
 
         if (player == null)
@@ -41,6 +43,7 @@ public class NettingController : MonoBehaviour
 
     private void Update()
     {
+        if (inv.thickNet) { catchChance = 0.75f; }
         if (Input.GetKeyDown(KeyCode.F))
         {
             FishingNetAnim.SetTrigger("Netting");

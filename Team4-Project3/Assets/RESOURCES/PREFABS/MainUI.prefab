@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 252267419045507304}
   - component: {fileID: 7327909878779261432}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: ThickNet
   m_TagString: ShopItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10002,7 +10002,7 @@ GameObject:
   - component: {fileID: 8954977469512641324}
   - component: {fileID: 1866821374003965041}
   m_Layer: 5
-  m_Name: RawImage (4)
+  m_Name: SecondWind
   m_TagString: ShopItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17364,7 +17364,9 @@ MonoBehaviour:
   bountifulHarvest: 0
   fishWhisperer: 0
   looseDirt: 0
+  secondWind: 0
   strongerLine: 0
+  thickNet: 0
 --- !u!114 &6443223380200647070
 MonoBehaviour:
   m_ObjectHideFlags: 0

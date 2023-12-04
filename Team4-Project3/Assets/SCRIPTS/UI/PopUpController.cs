@@ -61,16 +61,31 @@ public class PopUpController : MonoBehaviour
             case "BountifulHarvest":
                 itemName.text = "Bountiful Harvest";
                 description.text = "Fish have a chance of being worth more when caught.";
-                currentValue = 2;
+                currentValue = 3;
                 break;
-            case "FishWhispherer":
+            case "FishWhisperer":
                 itemName.text = "Fish Whisperer";
                 description.text = "Better chance of rarer fish spawning.";
+                currentValue = 5;
+                break;
+            case "LooseDirt":
+                itemName.text = "Loose Dirt";
+                description.text = "Spend less time digging.";
+                currentValue = 2;
+                break;
+            case "SecondWind":
+                itemName.text = "Second Wind";
+                description.text = "Sprint faster.";
                 currentValue = 2;
                 break;
             case "StrongerLine":
                 itemName.text = "Stronger Line";
                 description.text = "Make the fishing mini-game shorter.";
+                currentValue = 5;
+                break;
+            case "ThickNet":
+                itemName.text = "Thick Net";
+                description.text = "Better chance of catching something in the net.";
                 currentValue = 2;
                 break;
             default:

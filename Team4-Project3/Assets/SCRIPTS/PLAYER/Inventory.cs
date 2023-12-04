@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,9 @@ public class Inventory : MonoBehaviour
     public bool bountifulHarvest = false;
     public bool fishWhisperer = false;
     public bool looseDirt = false;
+    public bool secondWind = false;
     public bool strongerLine = false;
+    public bool thickNet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -105,8 +108,14 @@ public class Inventory : MonoBehaviour
                 case "LooseDirt": // Less time spent digging.
                     looseDirt = true;
                     break;
+                case "SecondWind":
+                    secondWind = true; // Player sprints faster.
+                    break;
                 case "StrongerLine": // The fishing mini-game is shorter.
                     strongerLine = true;
+                    break;
+                case "ThickNet": // Better chance of catching something in the net.
+                    thickNet = true;
                     break;
                 default:
                     break;
