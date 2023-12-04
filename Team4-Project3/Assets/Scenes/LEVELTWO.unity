@@ -7625,6 +7625,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6443223380200647070, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
+        type: 3}
+      propertyPath: rareFish
+      value: 
+      objectReference: {fileID: 320796327898536922, guid: d73f2c7c93474004a96d6c224bcdfe8b,
+        type: 3}
+    - target: {fileID: 6443223380200647070, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
+        type: 3}
+      propertyPath: commonFish
+      value: 
+      objectReference: {fileID: 457154928176521412, guid: e9120d6be4f80ba4ab9ca0140b6f85d7,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

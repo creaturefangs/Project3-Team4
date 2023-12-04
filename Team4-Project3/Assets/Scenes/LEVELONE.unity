@@ -5441,6 +5441,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6443223380200647070, guid: d17a0b79f4e6d2a49b732b9e4b6278d7,
+        type: 3}
+      propertyPath: rareFish
+      value: 
+      objectReference: {fileID: 5606667468672095703, guid: b30861f8ce60e234d919dbef33514264,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
