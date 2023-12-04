@@ -219,6 +219,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -206.72137
       objectReference: {fileID: 0}
@@ -831,6 +846,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -239.59137
       objectReference: {fileID: 0}
@@ -1016,6 +1046,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Farol_Light_ON (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
@@ -1570,6 +1615,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -188.08136
       objectReference: {fileID: 0}
@@ -2027,6 +2087,7 @@ GameObject:
   - component: {fileID: 964816760}
   - component: {fileID: 964816759}
   - component: {fileID: 964816758}
+  - component: {fileID: 964816761}
   m_Layer: 0
   m_Name: WoodenDocks_Complete (2)
   m_TagString: Untagged
@@ -2099,6 +2160,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019384690}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 179.147}
+--- !u!65 &964816761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964816757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.16552909, y: 0.085230485, z: 0.041171532}
+  m_Center: {x: 0.005888316, y: 0.0042687627, z: -0.010536579}
 --- !u!1001 &1025905948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4049,6 +4131,7 @@ GameObject:
   - component: {fileID: 1669916727}
   - component: {fileID: 1669916726}
   - component: {fileID: 1669916725}
+  - component: {fileID: 1669916728}
   m_Layer: 0
   m_Name: WoodenDocks_Complete (3)
   m_TagString: Untagged
@@ -4121,6 +4204,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019384690}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+--- !u!65 &1669916728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669916724}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1655291, y: 0.0852305, z: 0.041171532}
+  m_Center: {x: 0.005888317, y: 0.004269002, z: -0.010536572}
 --- !u!4 &1850484265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7734329171712609271, guid: c37e465b54e9c944da149b3ab65227bb,
@@ -4353,6 +4457,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Farol_Light_ON (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
@@ -4610,6 +4729,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -205.29135
       objectReference: {fileID: 0}
@@ -4762,7 +4896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118f2694d94a4a945a873b2cc57363a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultAmbience: {fileID: 8300000, guid: e7e6d22a01ac3554f8e41efef05c4a40, type: 3}
+  defaultAmbience: {fileID: 8300000, guid: 061da920dd0884646bec99f60c8516b0, type: 3}
   audioMixer: {fileID: 24100000, guid: fb384701c786c784c82e3b6c98c47709, type: 2}
   activateTime: 0
 --- !u!1001 &2071771952
@@ -4777,6 +4911,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Farol_Light_ON
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62874
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62874
       objectReference: {fileID: 0}
     - target: {fileID: 5814937682867955765, guid: 7518149b929dd405e8f6224fd017de1d,
         type: 3}
