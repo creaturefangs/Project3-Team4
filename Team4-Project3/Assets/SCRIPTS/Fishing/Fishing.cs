@@ -13,6 +13,10 @@ public class Fishing : MonoBehaviour
     public float waterLevel;
     public float spawnRate = 10f; // In seconds.
 
+    public AudioSource fishingSFX;
+    public AudioClip castSFX;
+    public AudioClip reelSFX;
+
     [Header("Prefabs")]
     public GameObject commonFish;
     public GameObject uncommonFish;
@@ -54,6 +58,7 @@ public class Fishing : MonoBehaviour
     public bool lineCast = false;
     private Vector3 castPosition;
     private GameObject player;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -197,6 +202,7 @@ public class Fishing : MonoBehaviour
         {
             Animator animator = GameObject.Find("FishingPole").GetComponent<Animator>();
             animator.Play("FishingPole_Cast", -1, 0f);
+            fishingSFX.PlayOneShot(castSFX);
             GameObject prefab = Resources.Load<GameObject>("PREFABS/Objects/FishingBob");
             GameObject bob = Instantiate(prefab, castPosition, Quaternion.identity);
             bob.name = "FishingBob";
@@ -219,6 +225,14 @@ public class Fishing : MonoBehaviour
     {
         catchTime = 0f; // Resets the catch progress.
         loseTime = 0f;
+
+        fishingSFX.clip = reelSFX;
+
+        // Set the loop property to true to make the audio clip loop
+        fishingSFX.loop = true;
+
+        // Play the audio clip
+        fishingSFX.Play();
 
         inMinigame = true;
         fish = fish_obj;
@@ -257,6 +271,10 @@ public class Fishing : MonoBehaviour
 
     private void EndMinigame(bool caught_fish)
     {
+        //stop the reeling sound 
+        fishingSFX.clip = null;
+        fishingSFX.Stop();
+
         meter.transform.parent.gameObject.SetActive(false);
         tooltipPanel.SetActive(false);
         RetrieveLine();

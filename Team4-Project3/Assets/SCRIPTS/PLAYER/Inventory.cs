@@ -20,6 +20,11 @@ public class Inventory : MonoBehaviour
     public bool strongerLine = false;
     public bool thickNet = false;
 
+    public AudioSource currencySFX;
+    public AudioClip coinSFX;
+    public AudioClip bugSFX;
+    public AudioClip sellSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,11 +62,13 @@ public class Inventory : MonoBehaviour
                 obj = GameObject.Find("BugCurrency");
                 bugs += change;
                 amt = bugs;
+                currencySFX.PlayOneShot(bugSFX);
                 break;
             case "coins":
                 obj = GameObject.Find("CoinCurrency");
                 currency += change;
                 amt = currency;
+                currencySFX.PlayOneShot(coinSFX);
                 break;
             case "fish":
                 obj = GameObject.Find("FishCurrency");
@@ -92,7 +99,7 @@ public class Inventory : MonoBehaviour
 
     public void BuyItem(int cost, string item)
     {
-        if ((currency - cost) < 0) { } // Put player feedback here!
+        if ((currency - cost) < 0) { currencySFX.PlayOneShot(sellSFX); } // Put player feedback here!
         else
         {
             UpdateCurrency("coins", -cost);

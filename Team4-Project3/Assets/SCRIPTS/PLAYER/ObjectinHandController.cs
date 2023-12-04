@@ -9,6 +9,8 @@ public class ObjectinHandController : MonoBehaviour
     private GameObject hand;
     public List<GameObject> tools = new List<GameObject>();
     private GameObject toolPanel;
+    public AudioSource audioSource;
+    public AudioClip toggleSFX;
 
     void Start()
     {
@@ -49,12 +51,14 @@ public class ObjectinHandController : MonoBehaviour
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
         {
+            audioSource.PlayOneShot(toggleSFX);
             int currentItem = ObjectIndex();
             if (currentItem == 0) { SwitchItem(hand.transform.childCount - 1); }
             else { SwitchItem(currentItem - 1); }
         }
         else if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
         {
+            audioSource.PlayOneShot(toggleSFX);
             int currentItem = ObjectIndex();
             if (currentItem == hand.transform.childCount - 1) { SwitchItem(0); }
             else { SwitchItem(currentItem + 1); }
